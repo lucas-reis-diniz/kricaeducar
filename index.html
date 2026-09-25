@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KricaEducar | Espaço Psicopedagógico — Erica Reis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --papel:#F2F0EA;
+    --papel-2:#EBE8E0;
+    --teal:#17808F;
+    --teal-escuro:#0F6472;
+    --petroleo:#0F3947;
+    --petroleo-70:rgba(15,57,71,.72);
+    --branco:#FFFFFF;
+    --linha:rgba(15,57,71,.14);
+    --sombra:0 18px 40px -22px rgba(15,57,71,.28);
+    --raio:18px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Instrument Sans",sans-serif;
+    background:var(--papel);
+    color:var(--petroleo);
+    line-height:1.6;
+    position:relative;
+  }
+  body::before{
+    content:"";
+    position:fixed;inset:0;
+    pointer-events:none;
+    opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.06 0 0 0 0 0.22 0 0 0 0 0.28 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+    z-index:1;
+  }
+  main,header,footer{position:relative;z-index:2}
+  h1,h2,h3,.serif{font-family:"Fraunces",serif;font-weight:500;line-height:1.15}
+  .destaque{color:var(--teal);font-style:italic}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--teal-escuro);font-weight:600;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--teal)}
+  .btn{
+    display:inline-block;padding:14px 30px;border-radius:999px;
+    font-weight:600;font-size:.95rem;text-decoration:none;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+  }
+  .btn:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+  .btn-teal{background:var(--teal);color:#fff;box-shadow:var(--sombra)}
+  .btn-teal:hover{background:var(--teal-escuro);transform:translateY(-2px)}
+  .btn-linha{border:1.5px solid var(--petroleo);color:var(--petroleo)}
+  .btn-linha:hover{background:var(--petroleo);color:var(--papel)}
+
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(242,240,234,.88);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--linha);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--petroleo)}
+  .logo-nome{font-family:"Fraunces",serif;font-size:1.3rem;line-height:1.05}
+  .logo-nome small{display:block;font-family:"Instrument Sans",sans-serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-escuro)}
+  .nav-links{display:flex;gap:26px;align-items:center;list-style:none}
+  .nav-links a{color:var(--petroleo-70);text-decoration:none;font-size:.92rem;font-weight:500}
+  .nav-links a:hover{color:var(--teal)}
+  .nav-cta{background:var(--teal);color:#fff!important;padding:9px 20px;border-radius:999px}
+  .nav-cta:hover{background:var(--teal-escuro)}
+
+  .hero{padding:84px 0 92px;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(2.3rem,4.8vw,3.7rem);margin:20px 0 22px}
+  .hero p{font-size:1.1rem;color:var(--petroleo-70);max-width:35rem;margin-bottom:34px}
+  .hero-acoes{display:flex;gap:16px;flex-wrap:wrap}
+  .hero-nota{margin-top:26px;font-size:.85rem;color:var(--petroleo-70)}
+  .hero-arte{display:flex;justify-content:center}
+
+  .faixa{border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);background:var(--papel-2)}
+  .faixa-in{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:36px 0;text-align:center}
+  .faixa strong{font-family:"Fraunces",serif;font-size:1.35rem;display:block;color:var(--teal-escuro)}
+  .faixa span{font-size:.86rem;color:var(--petroleo-70)}
+
+  section{padding:92px 0}
+  .cabeca{max-width:40rem;margin-bottom:52px}
+  .cabeca h2{font-size:clamp(1.9rem,3.6vw,2.7rem);margin:16px 0 14px}
+  .cabeca p{color:var(--petroleo-70);font-size:1.05rem}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .cards-2{grid-template-columns:repeat(2,1fr)}
+  .card{
+    background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);
+    padding:30px 26px;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:var(--sombra)}
+  .card h3{font-size:1.25rem;margin:16px 0 10px}
+  .card p{font-size:.93rem;color:var(--petroleo-70)}
+  .card ul{list-style:none;margin-top:14px;font-size:.9rem;color:var(--petroleo-70)}
+  .card li{padding-left:18px;position:relative;margin-bottom:8px}
+  .card li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teal);position:absolute;left:0;top:9px}
+
+  .escuro{background:var(--petroleo);color:var(--papel)}
+  .escuro .eyebrow{color:#8FD0D9}
+  .escuro .eyebrow::before{background:#8FD0D9}
+  .escuro h2 .destaque{color:#6FC4CF}
+  .escuro .cabeca p{color:rgba(242,240,234,.75)}
+  .escuro .card{background:rgba(255,255,255,.03);border-color:rgba(242,240,234,.16)}
+  .escuro .card:hover{box-shadow:none}
+  .escuro .card p,.escuro .card ul{color:rgba(242,240,234,.72)}
+  .escuro-cta{margin-top:48px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+  .escuro-cta .btn-teal{background:#fff;color:var(--petroleo);box-shadow:none}
+  .escuro-cta .btn-teal:hover{background:#e8f4f6}
+  .escuro-cta span{font-size:.88rem;color:rgba(242,240,234,.65)}
+
+  .cursos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .planos{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .planos-2{grid-template-columns:repeat(2,1fr)}
+  .curso{position:relative}
+  .badge{
+    position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+    background:var(--teal);color:#fff;font-size:.66rem;letter-spacing:.09em;
+    text-transform:uppercase;font-weight:600;padding:5px 16px;border-radius:999px;white-space:nowrap;
+  }
+  .destaque-card{border-color:var(--teal);box-shadow:var(--sombra)}
+  .preco-de{font-family:"Instrument Sans",sans-serif;font-size:.85rem;color:var(--petroleo-70);text-decoration:line-through;display:block;font-weight:400}
+  .planos-info{margin-top:28px;font-size:.85rem;color:var(--petroleo-70)}
+  .grupo-titulo{font-size:1.45rem;margin:48px 0 26px;color:var(--teal-escuro)}
+  .grupo-titulo:first-of-type{margin-top:0}
+  .curso{
+    background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);
+    padding:32px 28px;display:flex;flex-direction:column;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .curso:hover{transform:translateY(-4px);box-shadow:var(--sombra)}
+  .curso-tag{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-escuro);font-weight:600;margin-bottom:14px}
+  .curso h3{font-size:1.32rem;margin-bottom:12px}
+  .curso p{font-size:.93rem;color:var(--petroleo-70);flex:1}
+  .curso-preco{margin:22px 0 18px;font-family:"Fraunces",serif;font-size:1.7rem;color:var(--teal-escuro)}
+  .curso-preco small{font-family:"Instrument Sans",sans-serif;font-size:.8rem;color:var(--petroleo-70);display:block;font-weight:400}
+  .curso .btn{text-align:center}
+
+  .valores{background:var(--papel-2);border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);padding:56px 0}
+  .valores-in{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+  .valor h3{font-size:1.1rem;margin-bottom:8px;color:var(--teal-escuro)}
+  .valor p{font-size:.9rem;color:var(--petroleo-70)}
+
+  .sobre-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+  .sobre-foto{
+    aspect-ratio:4/5;border-radius:var(--raio);
+    background:linear-gradient(160deg,var(--papel-2),#DDD8CC);
+    border:1px solid var(--linha);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--petroleo-70);font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;
+  }
+  .sobre h2{font-size:clamp(1.9rem,3.4vw,2.6rem);margin:16px 0 18px}
+  .sobre p{color:var(--petroleo-70);margin-bottom:16px}
+  .sobre-assinatura{font-family:"Fraunces",serif;font-style:italic;font-size:1.25rem;color:var(--teal-escuro);margin-top:10px}
+
+  .cta-final{text-align:center}
+  .cta-final h2{font-size:clamp(2rem,4.2vw,3rem);max-width:36rem;margin:18px auto 16px}
+  .cta-final p{color:var(--petroleo-70);max-width:32rem;margin:0 auto 36px}
+
+  footer{
+    border-top:1px solid var(--linha);padding:44px 0;
+    font-size:.85rem;color:var(--petroleo-70);
+  }
+  .footer-in{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+
+  @media(max-width:900px){
+    .hero-grid,.sobre-grid{grid-template-columns:1fr}
+    .hero-arte{order:-1}
+    .hero-arte svg{max-width:230px}
+    .cards,.cards-2,.cursos-grid,.valores-in,.planos,.planos-2{grid-template-columns:1fr}
+    .faixa-in{grid-template-columns:1fr;gap:18px}
+    .nav-links li:not(:last-child){display:none}
+    section{padding:70px 0}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{transition:none!important;scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="logo" href="#" aria-label="KricaEducar, página inicial">
+      <svg width="38" height="38" viewBox="0 0 40 40" aria-hidden="true">
+        <g fill="#17808F">
+          <circle cx="12" cy="10" r="2.4"/><circle cx="20" cy="7" r="2"/><circle cx="28" cy="10" r="2.4"/>
+          <circle cx="8" cy="18" r="2"/><circle cx="16" cy="16" r="1.6"/><circle cx="24" cy="16" r="1.6"/><circle cx="32" cy="18" r="2"/>
+          <circle cx="11" cy="26" r="2.2"/><circle cx="20" cy="24" r="1.6"/><circle cx="29" cy="26" r="2.2"/>
+          <circle cx="16" cy="32" r="1.8"/><circle cx="24" cy="32" r="1.8"/>
+        </g>
+        <circle cx="20" cy="16" r="1.4" fill="#E4A23C"/>
+        <circle cx="20" cy="24" r="1.2" fill="#C05B5B"/>
+      </svg>
+      <span class="logo-nome">KricaEducar<small>Espaço Psicopedagógico</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#atendimento">Atendimento</a></li>
+      <li><a href="#escolas">Escolas</a></li>
+      <li><a href="#profissionais">Profissionais</a></li>
+      <li><a href="#cursos">Cursos</a></li>
+      <li><a class="nav-cta" href="#agendar">Agendar atendimento</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Espaço Psicopedagógico KricaEducar</span>
+      <h1>Desenvolvimento, aprendizagem e <span class="destaque">ciência</span> aplicada à prática</h1>
+      <p>Atendimento especializado, formação profissional e consultoria técnica para crianças, adolescentes, famílias, profissionais e instituições de ensino — sempre com base em evidências científicas, ética e prática clínica.</p>
+      <div class="hero-acoes">
+        <a class="btn btn-teal" href="#agendar">Agendar atendimento</a>
+        <a class="btn btn-linha" href="#profissionais">Formações para profissionais</a>
+      </div>
+      <p class="hero-nota">Atendimentos, aulas, cursos e formações presenciais e on-line.</p>
+    </div>
+    <div class="hero-arte" aria-hidden="true">
+      <svg width="340" height="340" viewBox="0 0 340 340">
+        <g fill="#17808F">
+          <circle cx="170" cy="60" r="9"/><circle cx="120" cy="75" r="7"/><circle cx="220" cy="75" r="7"/>
+          <circle cx="90" cy="115" r="8"/><circle cx="250" cy="115" r="8"/>
+          <circle cx="145" cy="105" r="5"/><circle cx="195" cy="105" r="5"/>
+          <circle cx="75" cy="165" r="7"/><circle cx="265" cy="165" r="7"/>
+          <circle cx="120" cy="150" r="4.5"/><circle cx="220" cy="150" r="4.5"/><circle cx="170" cy="140" r="6"/>
+          <circle cx="95" cy="215" r="8"/><circle cx="245" cy="215" r="8"/>
+          <circle cx="145" cy="195" r="5"/><circle cx="195" cy="195" r="5"/>
+          <circle cx="130" cy="250" r="7"/><circle cx="210" cy="250" r="7"/>
+          <circle cx="170" cy="235" r="5.5"/>
+          <circle cx="170" cy="280" r="9"/>
+        </g>
+        <circle cx="170" cy="170" r="6" fill="#E4A23C"/>
+        <circle cx="145" cy="160" r="4" fill="#C05B5B"/>
+        <circle cx="195" cy="160" r="4" fill="#5B8F5B"/>
+        <g stroke="#17808F" stroke-opacity=".25" stroke-width="1.5">
+          <line x1="170" y1="60" x2="120" y2="75"/><line x1="170" y1="60" x2="220" y2="75"/>
+          <line x1="120" y1="75" x2="90" y2="115"/><line x1="220" y1="75" x2="250" y2="115"/>
+          <line x1="90" y1="115" x2="75" y2="165"/><line x1="250" y1="115" x2="265" y2="165"/>
+          <line x1="75" y1="165" x2="95" y2="215"/><line x1="265" y1="165" x2="245" y2="215"/>
+          <line x1="95" y1="215" x2="130" y2="250"/><line x1="245" y1="215" x2="210" y2="250"/>
+          <line x1="130" y1="250" x2="170" y2="280"/><line x1="210" y1="250" x2="170" y2="280"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<div class="faixa">
+  <div class="wrap faixa-in">
+    <div><strong>Famílias</strong><span>avaliação, intervenção e orientação familiar</span></div>
+    <div><strong>Instituições de ensino</strong><span>consultoria, assessoria e formação de equipes</span></div>
+    <div><strong>Profissionais</strong><span>cursos, mentorias, supervisão e grupos de estudo</span></div>
+  </div>
+</div>
+
+<section id="atendimento">
+  <div class="wrap">
+    <div class="cabeca">
+      <span class="eyebrow">Atendimento clínico</span>
+      <h2>Cuidado especializado para quem <span class="destaque">aprende</span></h2>
+      <p>Acompanhamento de crianças e adolescentes com dificuldades e transtornos de aprendizagem, com a família como parte ativa do processo.</p>
+    </div>
+    <div class="cards cards-2">
+      <article class="card">
+        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><g fill="#17808F"><circle cx="9" cy="9" r="4"/><circle cx="25" cy="9" r="3"/><circle cx="9" cy="25" r="3"/><circle cx="25" cy="25" r="4"/></g></svg>
+        <h3>Avaliação Psicopedagógica e Neuropsicopedagógica</h3>
+        <p>Processo individualizado e criterioso para identificar o perfil de aprendizagem, as potencialidades e as dificuldades do paciente, subsidiando um plano de intervenção baseado em evidências.</p>
+        <ul>
+          <li>Entrevista inicial gratuita com a família</li>
+          <li>Anamnese com os pais ou responsáveis</li>
+          <li>8 sessões individuais com testes e instrumentos padronizados</li>
+          <li>Contato técnico com a instituição de ensino</li>
+          <li>Devolutiva final com entrega do parecer avaliativo</li>
+        </ul>
+      </article>
+      <article class="card">
+        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><g fill="#17808F"><circle cx="17" cy="7" r="4"/><circle cx="8" cy="20" r="3"/><circle cx="26" cy="20" r="3"/><circle cx="17" cy="28" r="3"/></g></svg>
+        <h3>Intervenção Psicopedagógica e Neuropsicopedagógica</h3>
+        <p>Iniciada após a conclusão da avaliação, com um Plano Interventivo Individualizado estruturado em metas de curto, médio e longo prazo.</p>
+        <ul>
+          <li>Protocolos interventivos e programas baseados no modelo RTI</li>
+          <li>Recursos terapêuticos e estratégias fundamentadas em evidências</li>
+          <li>Monitoramento contínuo, com ajustes conforme a evolução</li>
+          <li>Orientação familiar e devolutivas com a escola</li>
+        </ul>
+      </article>
+    </div>
+    <div class="hero-acoes" style="margin-top:44px;align-items:center">
+      <a class="btn btn-teal" href="https://wa.me/5511987868476?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20avalia%C3%A7%C3%A3o%20psicopedag%C3%B3gica.">Falar no WhatsApp</a>
+      <span style="font-size:.85rem;color:var(--petroleo-70)">A entrevista inicial é gratuita: valores e cronograma são apresentados nela.</span>
+    </div>
+  </div>
+</section>
+
+<section id="escolas" class="valores" style="padding:92px 0">
+  <div class="wrap">
+    <div class="cabeca">
+      <span class="eyebrow">Instituições de ensino</span>
+      <h2>Sua escola com suporte <span class="destaque">técnico</span> de verdade</h2>
+      <p>Consultoria e formação para equipes educacionais lidarem com a diversidade de aprendizagem em sala de aula.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <h3>Consultoria e assessoria</h3>
+        <p>Acompanhamento técnico contínuo para instituições de ensino, com orientação de condutas e fluxos de encaminhamento.</p>
+      </article>
+      <article class="card">
+        <h3>Palestras e treinamentos</h3>
+        <p>Formações para equipes educacionais sobre aprendizagem, inclusão, transtornos e práticas baseadas em evidências.</p>
+      </article>
+      <article class="card">
+        <h3>Materiais técnicos</h3>
+        <p>Desenvolvimento de materiais técnicos e educacionais sob medida para a realidade da sua instituição.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="profissionais" class="escuro">
+  <div class="wrap">
+    <div class="cabeca">
+      <span class="eyebrow">Para profissionais</span>
+      <h2>Da formação à <span class="destaque">excelência</span> na prática clínica</h2>
+      <p>Mentorias, supervisão e atualização científica para você atuar com segurança e se tornar referência na sua área.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <h3>Mentoria e supervisão clínica</h3>
+        <p>Acompanhamento próximo dos seus casos reais: hipóteses, condutas, documentos e posicionamento profissional.</p>
+      </article>
+      <article class="card">
+        <h3>Cursos de capacitação</h3>
+        <p>Cursos de capacitação e aperfeiçoamento, presenciais e on-line, unindo teoria e aplicação prática.</p>
+      </article>
+      <article class="card">
+        <h3>Grupos de estudo</h3>
+        <p>Grupos de estudo e atualização científica para manter sua prática alinhada às evidências mais recentes.</p>
+      </article>
+    </div>
+    <div class="escuro-cta">
+      <a class="btn btn-teal" href="#mentoria">Ver planos e agendar</a>
+      <span>Horários e valores disponíveis logo abaixo, com agendamento on-line.</span>
+    </div>
+  </div>
+</section>
+
+<section id="mentoria" style="padding-top:0">
+  <div class="wrap">
+    <div class="cabeca">
+      <span class="eyebrow">Mentoria e supervisão</span>
+      <h2>Escolha seu plano e <span class="destaque">agende</span> on-line</h2>
+      <p>Para psicopedagogos, pedagogos, neuropsicopedagogos e demais profissionais que buscam aperfeiçoar sua atuação clínica e institucional.</p>
+    </div>
+    <h3 class="grupo-titulo">Mentoria</h3>
+    <div class="planos planos-2">
+      <article class="curso">
+        <span class="curso-tag">Mentoria</span>
+        <h3>Pacote com 4 encontros</h3>
+        <p>Desenvolvimento profissional, planejamento de casos, estruturação de atendimentos e organização clínica.</p>
+        <div class="curso-preco">R$ 750<small>pacote completo</small></div>
+        <a class="btn btn-teal" href="#agendar">Agendar</a>
+      </article>
+      <article class="curso">
+        <span class="curso-tag">Mentoria</span>
+        <h3>Pacote com 12 encontros</h3>
+        <p>Acompanhamento de longo prazo para aprimoramento técnico contínuo e evolução consistente da sua prática.</p>
+        <div class="curso-preco">R$ 1.800<small>equivale a R$ 150 por encontro</small></div>
+        <a class="btn btn-teal" href="#agendar">Agendar</a>
+      </article>
+    </div>
+    <h3 class="grupo-titulo">Supervisão Psicopedagógica Clínica</h3>
+    <p style="max-width:44rem;margin:-12px 0 30px;color:var(--petroleo-70);font-size:.95rem">Um espaço de escuta qualificada, troca de experiências e aprofundamento técnico: discussão de casos reais, direcionamento interventivo, apoio na construção de relatórios e planejamentos, e mais segurança na sua prática clínica.</p>
+    <div class="planos">
+      <article class="curso">
+        <span class="curso-tag">Sessão avulsa</span>
+        <h3>1 aula</h3>
+        <p>Flexibilidade para atender suas necessidades pontuais.</p>
+        <div class="curso-preco">R$ 200<small>por encontro</small></div>
+        <a class="btn btn-teal" href="#agendar">Agendar</a>
+      </article>
+      <article class="curso">
+        <span class="curso-tag">Pacote Essencial</span>
+        <h3>2 aulas</h3>
+        <p>Economia de R$ 20,00. Valor por encontro: R$ 190,00.</p>
+        <div class="curso-preco"><span class="preco-de">de R$ 400,00</span>R$ 380<small>5% de desconto</small></div>
+        <a class="btn btn-teal" href="#agendar">Agendar</a>
+      </article>
+      <article class="curso destaque-card">
+        <span class="badge">Mais escolhido</span>
+        <span class="curso-tag">Pacote Intermediário</span>
+        <h3>4 aulas</h3>
+        <p>Economia de R$ 80,00. Valor por encontro: R$ 180,00.</p>
+        <div class="curso-preco"><span class="preco-de">de R$ 800,00</span>R$ 720<small>10% de desconto</small></div>
+        <a class="btn btn-teal" href="#agendar">Agendar</a>
+      </article>
+      <article class="curso">
+        <span class="curso-tag">Pacote Intensivo</span>
+        <h3>5 aulas</h3>
+        <p>Economia de R$ 150,00. Valor por encontro: R$ 170,00.</p>
+        <div class="curso-preco"><span class="preco-de">de R$ 1.000,00</span>R$ 850<small>15% de desconto</small></div>
+        <a class="btn btn-teal" href="#agendar">Agendar</a>
+      </article>
+    </div>
+    <p class="planos-info">Validade dos pacotes: 60 dias. Cancelamento ou reagendamento com até 24h de antecedência. Formas de pagamento: PIX, transferência ou cartão de crédito.</p>
+  </div>
+</section>
+
+<section id="cursos" style="padding-top:0">
+  <div class="wrap">
+    <div class="cabeca">
+      <span class="eyebrow">Cursos e produtos digitais</span>
+      <h2>Materiais para elevar sua <span class="destaque">prática</span></h2>
+      <p>Conteúdos desenvolvidos para profissionais da área clínica e educacional, fundamentados na prática e em evidências científicas, com acesso imediato após a aquisição.</p>
+    </div>
+    <div class="cursos-grid">
+      <article class="curso">
+        <span class="curso-tag">Cursos</span>
+        <h3>Protocolos, instrumentos e testes avaliativos</h3>
+        <p>Cursos de capacitação sobre a aplicação e análise de protocolos, instrumentos e testes na avaliação psicopedagógica.</p>
+        <a class="btn btn-teal" href="#">Conhecer os cursos</a>
+      </article>
+      <article class="curso">
+        <span class="curso-tag">Cursos</span>
+        <h3>Estudos de casos</h3>
+        <p>Aprenda com casos reais: raciocínio clínico, hipóteses, condutas e decisões, do primeiro atendimento à devolutiva.</p>
+        <a class="btn btn-teal" href="#">Conhecer os estudos</a>
+      </article>
+      <article class="curso">
+        <span class="curso-tag">Produtos digitais</span>
+        <h3>E-books, atividades e apostilas</h3>
+        <p>Atividades psicopedagógicas autorais, modelos de recursos terapêuticos e materiais de apoio para avaliação e intervenção.</p>
+        <a class="btn btn-teal" href="#">Ver materiais</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="valores">
+  <div class="wrap valores-in">
+    <div class="valor">
+      <h3>Base em evidências</h3>
+      <p>Todos os serviços são construídos sobre evidências científicas atualizadas, unindo teoria e aplicação.</p>
+    </div>
+    <div class="valor">
+      <h3>Ética profissional</h3>
+      <p>Atuação qualificada e responsável, alinhada às demandas atuais da educação e da saúde.</p>
+    </div>
+    <div class="valor">
+      <h3>Cuidado humanizado</h3>
+      <p>Cada pessoa, família e instituição é acompanhada com escuta, respeito e soluções sob medida.</p>
+    </div>
+  </div>
+</div>
+
+<section id="agendar" style="background:var(--branco);border-top:1px solid var(--linha);border-bottom:1px solid var(--linha)">
+  <div class="wrap">
+    <div class="cabeca">
+      <span class="eyebrow">Agendamento on-line</span>
+      <h2>Escolha o melhor <span class="destaque">horário</span> para você</h2>
+      <p>Selecione o tipo de atendimento e o horário disponível. A confirmação chega no seu e-mail e o compromisso entra direto na agenda do espaço.</p>
+    </div>
+    <!-- INÍCIO EMBED CAL.COM
+         Substitua "kricaeducar" pelo nome de usuário criado no cal.com
+         e "atendimento" pelo slug do tipo de evento configurado lá. -->
+    <div id="cal-agenda" style="width:100%;min-height:640px;overflow:auto;border-radius:var(--raio)"></div>
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", {origin:"https://cal.com"});
+      Cal("inline", {
+        elementOrSelector: "#cal-agenda",
+        calLink: "kricaeducar/atendimento",
+        layout: "month_view"
+      });
+      Cal("ui", {
+        styles: { branding: { brandColor: "#17808F" } },
+        hideEventTypeDetails: false,
+        layout: "month_view"
+      });
+    </script>
+    <!-- FIM EMBED CAL.COM -->
+    <p style="margin-top:20px;font-size:.85rem;color:var(--petroleo-70)">Prefere falar com uma pessoa? <a href="#contato" style="color:var(--teal-escuro);font-weight:600">Chame no WhatsApp</a> que agendamos juntos.</p>
+  </div>
+</section>
+
+<section class="sobre" id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="sobre-foto" style="overflow:hidden"><img src="erica-reis-foto.jpg" alt="Erica Reis em seu consultório no Espaço KricaEducar" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.remove()"></div>
+    <div>
+      <span class="eyebrow">Quem guia o espaço</span>
+      <h2>Prazer, <span class="destaque">Erica Reis</span></h2>
+      <p>Psicopedagoga, mentora e supervisora psicopedagógica. À frente do Espaço KricaEducar, une a prática clínica com crianças e adolescentes à formação de profissionais e ao suporte técnico a instituições de ensino.</p>
+      <p>Seu compromisso é promover uma atuação qualificada, humanizada e baseada em ciência, contribuindo para o desenvolvimento das pessoas e para a excelência da prática profissional.</p>
+      <p class="sobre-assinatura">"Desenvolvimento e aprendizagem caminham juntos quando teoria e prática se encontram."</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final escuro" id="contato">
+  <div class="wrap">
+    <span class="eyebrow" style="justify-content:center">Fale com o espaço</span>
+    <h2>Vamos cuidar da <span class="destaque">aprendizagem</span> juntos?</h2>
+    <p>Agende um atendimento, leve o KricaEducar para a sua escola ou dê o próximo passo na sua carreira.</p>
+    <div class="hero-acoes" style="justify-content:center">
+      <a class="btn btn-teal" style="background:#fff;color:var(--petroleo);box-shadow:none" href="https://wa.me/5511987868476?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20KricaEducar.">Falar pelo WhatsApp</a>
+      <a class="btn" style="border:1.5px solid rgba(242,240,234,.5);color:var(--papel)" href="#cursos">Conhecer os cursos</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap footer-in">
+    <span>Espaço Psicopedagógico KricaEducar · Erica Reis, Psicopedagoga</span>
+    <span>@psicopedagogaericareis</span>
+  </div>
+</footer>
+
+</body>
+</html>
