@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KricaEducar | Espaço Psicopedagógico — Erica Reis</title>
+<meta name="description" content="Espaço Psicopedagógico KricaEducar: avaliação e intervenção psicopedagógica e neuropsicopedagógica, consultoria para escolas, mentoria e supervisão para profissionais, com Erica Reis.">
+<meta property="og:title" content="KricaEducar | Espaço Psicopedagógico — Erica Reis">
+<meta property="og:description" content="Atendimento, formação profissional e consultoria técnica com base em evidências científicas.">
+<meta property="og:image" content="https://lucas-reis-diniz.github.io/kricaeducar/img/erica-sobre.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -79,7 +83,48 @@
   .hero p{font-size:1.1rem;color:var(--petroleo-70);max-width:35rem;margin-bottom:34px}
   .hero-acoes{display:flex;gap:16px;flex-wrap:wrap}
   .hero-nota{margin-top:26px;font-size:.85rem;color:var(--petroleo-70)}
-  .hero-arte{display:flex;justify-content:center}
+  .hero-arte{display:flex;justify-content:center;position:relative}
+  .hero-foto{position:relative;width:100%;max-width:400px}
+  .hero-foto img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:var(--raio);box-shadow:0 28px 60px -30px rgba(15,57,71,.55)}
+  .hero-foto svg{position:absolute;width:120px;height:120px;left:-44px;bottom:-40px;z-index:-1}
+  .hero-foto figcaption{position:absolute;right:-14px;bottom:28px;background:var(--branco);border:1px solid var(--linha);border-radius:14px;padding:12px 16px;box-shadow:var(--sombra);font-size:.8rem;line-height:1.35;color:var(--petroleo-70)}
+  .hero-foto figcaption strong{display:block;font-family:"Fraunces",serif;font-size:1rem;font-weight:500;color:var(--petroleo)}
+  .duas-col{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+  .duas-col.inversa{grid-template-columns:.9fr 1.1fr}
+  .foto-bloco{width:100%;border-radius:var(--raio);display:block;border:1px solid var(--linha);box-shadow:var(--sombra)}
+  .espaco{margin-top:72px}
+  .espaco h3{font-size:1.6rem;margin:14px 0 12px}
+  .espaco p{color:var(--petroleo-70)}
+  .supervisao{margin:56px 0 34px}
+  .supervisao .grupo-titulo{margin:0 0 10px}
+  .supervisao .tagline{font-family:"Fraunces",serif;font-style:italic;font-size:1.15rem;color:var(--teal-escuro);margin-bottom:14px}
+  .supervisao p{color:var(--petroleo-70);font-size:.97rem}
+  .checklist{list-style:none;margin:22px 0 18px;display:grid;gap:10px}
+  .checklist li{display:flex;gap:12px;align-items:flex-start;font-weight:500}
+  .checklist li::before{content:"";flex:none;width:20px;height:20px;margin-top:2px;border-radius:50%;background:var(--teal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-7' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat}
+  .hero-foto img,.foto-bloco,.produto img,.galeria img{height:auto}
+  .supervisao .foto-bloco{aspect-ratio:1/1;object-fit:cover;object-position:50% 25%}
+  .planos-rodape{margin-top:30px;display:flex;gap:18px 28px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+  .planos-rodape .planos-info{margin-top:0;max-width:40rem}
+  .intervencao{margin-top:64px;background:var(--branco);border:1px solid var(--linha);border-radius:calc(var(--raio) + 6px);padding:40px}
+  .intervencao h3{font-size:clamp(1.5rem,2.8vw,1.9rem);margin:12px 0 14px}
+  .intervencao > .duas-col > div > p{color:var(--petroleo-70);margin-bottom:12px}
+  .habilidades{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:10px 18px;margin-top:6px}
+  .habilidades li{background:var(--papel);border:1px solid var(--linha);border-radius:12px;padding:10px 14px;font-size:.9rem;font-weight:500;display:flex;gap:10px;align-items:center}
+  .habilidades li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--teal)}
+  .intervencao-titulo{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-escuro);font-weight:600;margin-bottom:12px}
+  .objetivo{margin-top:26px;padding:18px 22px;border-left:3px solid var(--teal);background:var(--papel);border-radius:0 12px 12px 0;font-family:"Fraunces",serif;font-size:1.08rem;color:var(--petroleo)}
+  .galeria{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+  .galeria figure{margin:0}
+  .galeria img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;display:block;border:1px solid var(--linha)}
+  .galeria figcaption{font-size:.8rem;color:var(--petroleo-70);margin-top:8px}
+  .produto{background:var(--branco);border:1px solid var(--linha);border-radius:calc(var(--raio) + 6px);padding:28px;margin-bottom:28px;box-shadow:var(--sombra);grid-template-columns:.75fr 1.25fr;gap:44px}
+  .produto img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--raio);display:block}
+  .produto h3{font-size:clamp(1.6rem,3vw,2.1rem);margin:12px 0 14px}
+  .produto p{color:var(--petroleo-70);margin-bottom:12px}
+  .produto .curso-preco{margin:18px 0 20px;font-size:2.1rem}
+  .produto-acoes{display:flex;gap:14px 20px;align-items:center;flex-wrap:wrap}
+  .produto-acoes span{font-size:.82rem;color:var(--petroleo-70)}
 
   .faixa{border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);background:var(--papel-2)}
   .faixa-in{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:36px 0;text-align:center}
@@ -173,9 +218,15 @@
   .footer-in{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
 
   @media(max-width:900px){
-    .hero-grid,.sobre-grid{grid-template-columns:1fr}
+    .hero-grid,.sobre-grid,.duas-col,.duas-col.inversa{grid-template-columns:1fr}
+    .duas-col{gap:32px}
+    .produto{padding:20px;grid-template-columns:1fr}
+    .intervencao{padding:22px}
+    .habilidades,.galeria{grid-template-columns:1fr}
+    .hero-foto{max-width:300px}
+    .hero-foto figcaption{right:-6px}
+    .hero-foto svg{display:none}
     .hero-arte{order:-1}
-    .hero-arte svg{max-width:230px}
     .cards,.cards-2,.cursos-grid,.valores-in,.planos,.planos-2{grid-template-columns:1fr}
     .faixa-in{grid-template-columns:1fr;gap:18px}
     .nav-links li:not(:last-child){display:none}
@@ -226,32 +277,12 @@
       </div>
       <p class="hero-nota">Atendimentos, aulas, cursos e formações presenciais e on-line.</p>
     </div>
-    <div class="hero-arte" aria-hidden="true">
-      <svg width="340" height="340" viewBox="0 0 340 340">
-        <g fill="#17808F">
-          <circle cx="170" cy="60" r="9"/><circle cx="120" cy="75" r="7"/><circle cx="220" cy="75" r="7"/>
-          <circle cx="90" cy="115" r="8"/><circle cx="250" cy="115" r="8"/>
-          <circle cx="145" cy="105" r="5"/><circle cx="195" cy="105" r="5"/>
-          <circle cx="75" cy="165" r="7"/><circle cx="265" cy="165" r="7"/>
-          <circle cx="120" cy="150" r="4.5"/><circle cx="220" cy="150" r="4.5"/><circle cx="170" cy="140" r="6"/>
-          <circle cx="95" cy="215" r="8"/><circle cx="245" cy="215" r="8"/>
-          <circle cx="145" cy="195" r="5"/><circle cx="195" cy="195" r="5"/>
-          <circle cx="130" cy="250" r="7"/><circle cx="210" cy="250" r="7"/>
-          <circle cx="170" cy="235" r="5.5"/>
-          <circle cx="170" cy="280" r="9"/>
-        </g>
-        <circle cx="170" cy="170" r="6" fill="#E4A23C"/>
-        <circle cx="145" cy="160" r="4" fill="#C05B5B"/>
-        <circle cx="195" cy="160" r="4" fill="#5B8F5B"/>
-        <g stroke="#17808F" stroke-opacity=".25" stroke-width="1.5">
-          <line x1="170" y1="60" x2="120" y2="75"/><line x1="170" y1="60" x2="220" y2="75"/>
-          <line x1="120" y1="75" x2="90" y2="115"/><line x1="220" y1="75" x2="250" y2="115"/>
-          <line x1="90" y1="115" x2="75" y2="165"/><line x1="250" y1="115" x2="265" y2="165"/>
-          <line x1="75" y1="165" x2="95" y2="215"/><line x1="265" y1="165" x2="245" y2="215"/>
-          <line x1="95" y1="215" x2="130" y2="250"/><line x1="245" y1="215" x2="210" y2="250"/>
-          <line x1="130" y1="250" x2="170" y2="280"/><line x1="210" y1="250" x2="170" y2="280"/>
-        </g>
-      </svg>
+    <div class="hero-arte">
+      <figure class="hero-foto">
+        <svg viewBox="0 0 120 120" aria-hidden="true"><g fill="#17808F" opacity=".55"><circle cx="20" cy="20" r="5"/><circle cx="60" cy="12" r="4"/><circle cx="100" cy="24" r="5"/><circle cx="12" cy="60" r="4"/><circle cx="48" cy="52" r="3"/><circle cx="84" cy="58" r="3"/><circle cx="26" cy="96" r="5"/><circle cx="66" cy="92" r="4"/><circle cx="104" cy="100" r="4"/></g><circle cx="60" cy="60" r="4" fill="#E4A23C"/></svg>
+        <img src="img/erica-hero.jpg" alt="Erica Reis, psicopedagoga, em sua mesa no Espaço KricaEducar" width="800" height="1000">
+        <figcaption><strong>Erica Reis</strong>Psicopedagoga e neuropsicopedagoga</figcaption>
+      </figure>
     </div>
   </div>
 </header>
@@ -287,7 +318,7 @@
       <article class="card">
         <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><g fill="#17808F"><circle cx="17" cy="7" r="4"/><circle cx="8" cy="20" r="3"/><circle cx="26" cy="20" r="3"/><circle cx="17" cy="28" r="3"/></g></svg>
         <h3>Intervenção Psicopedagógica e Neuropsicopedagógica</h3>
-        <p>Iniciada após a conclusão da avaliação, com um Plano Interventivo Individualizado estruturado em metas de curto, médio e longo prazo.</p>
+        <p>Atendimento clínico individualizado voltado ao desenvolvimento das habilidades cognitivas, acadêmicas e funcionais relacionadas à aprendizagem. Iniciada após a avaliação, com um Plano Interventivo Individualizado estruturado em metas de curto, médio e longo prazo.</p>
         <ul>
           <li>Protocolos interventivos e programas baseados no modelo RTI</li>
           <li>Recursos terapêuticos e estratégias fundamentadas em evidências</li>
@@ -296,9 +327,45 @@
         </ul>
       </article>
     </div>
+    <div class="intervencao">
+      <div class="duas-col" style="align-items:start">
+        <div>
+          <span class="eyebrow">Como funciona a intervenção</span>
+          <h3>Estratégias <span class="destaque">lúdicas</span>, cognitivas e pedagógicas</h3>
+          <p>As intervenções são planejadas de forma personalizada, respeitando as necessidades, potencialidades e objetivos de cada paciente, com estratégias lúdicas, cognitivas e pedagógicas baseadas em evidências.</p>
+          <p class="objetivo">O objetivo é promover avanços significativos no desempenho acadêmico, na autonomia e na qualidade do processo de aprendizagem.</p>
+        </div>
+        <div>
+          <p class="intervencao-titulo">As sessões podem trabalhar</p>
+          <ul class="habilidades">
+            <li>Atenção e funções executivas</li>
+            <li>Alfabetização e letramento</li>
+            <li>Leitura, escrita e interpretação</li>
+            <li>Raciocínio lógico e habilidades matemáticas</li>
+            <li>Memória e processamento cognitivo</li>
+            <li>Linguagem e consciência fonológica</li>
+            <li>Organização, planejamento e autonomia</li>
+            <li>Desenvolvimento motivacional voltado à aprendizagem</li>
+          </ul>
+        </div>
+      </div>
+      <div class="galeria">
+        <figure><img src="img/sessao-escrita.jpg" alt="Criança escrevendo durante uma sessão, com dados de contar histórias sobre a mesa" width="900" height="675" loading="lazy"><figcaption>Escrita e narrativa com dados de histórias</figcaption></figure>
+        <figure><img src="img/sessao-jogo.jpg" alt="Jogo de tabuleiro Palavra Secreta sobre a mesa de atendimento" width="900" height="675" loading="lazy"><figcaption>Jogos para linguagem e vocabulário</figcaption></figure>
+        <figure><img src="img/sala-infantil.jpg" alt="Mesa infantil com lápis de cor, tintas e cadeiras coloridas" width="900" height="675" loading="lazy"><figcaption>Cantinho de atividades para as crianças</figcaption></figure>
+      </div>
+    </div>
     <div class="hero-acoes" style="margin-top:44px;align-items:center">
       <a class="btn btn-teal" href="https://wa.me/5511987868476?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20avalia%C3%A7%C3%A3o%20psicopedag%C3%B3gica.">Falar no WhatsApp</a>
-      <span style="font-size:.85rem;color:var(--petroleo-70)">A entrevista inicial é gratuita: valores e cronograma são apresentados nela.</span>
+      <span style="font-size:.85rem;color:var(--petroleo-70)">Entre em contato para informações sobre acompanhamento e horários. A entrevista inicial é gratuita e nela são apresentados valores e cronograma.</span>
+    </div>
+    <div class="duas-col inversa espaco">
+      <img class="foto-bloco" src="img/espaco-kricaeducar.jpg" alt="Sala de atendimento do Espaço Psicopedagógico KricaEducar, com mesa, estantes de livros e jogos" width="900" height="900" loading="lazy">
+      <div>
+        <span class="eyebrow">O espaço</span>
+        <h3>Um ambiente pensado para <span class="destaque">aprender</span></h3>
+        <p>Os atendimentos acontecem em uma sala acolhedora e organizada, com livros, jogos e recursos pedagógicos à disposição de cada etapa da avaliação e da intervenção.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -379,8 +446,22 @@
         <a class="btn btn-teal" href="#agendar">Agendar</a>
       </article>
     </div>
-    <h3 class="grupo-titulo">Supervisão Psicopedagógica Clínica</h3>
-    <p style="max-width:44rem;margin:-12px 0 30px;color:var(--petroleo-70);font-size:.95rem">Um espaço de escuta qualificada, troca de experiências e aprofundamento técnico: discussão de casos reais, direcionamento interventivo, apoio na construção de relatórios e planejamentos, e mais segurança na sua prática clínica.</p>
+    <div class="duas-col supervisao">
+      <div>
+        <h3 class="grupo-titulo">Supervisão Psicopedagógica e Neuropsicopedagógica</h3>
+        <p class="tagline">Sua prática clínica merece suporte, direção e segurança profissional.</p>
+        <p>A Supervisão Psicopedagógica Clínica foi estruturada para profissionais que desejam aprimorar análises, fortalecer condutas interventivas e ampliar a confiança na tomada de decisões clínicas.</p>
+        <ul class="checklist">
+          <li>Discussão de casos reais</li>
+          <li>Apoio em relatórios e planejamentos</li>
+          <li>Direcionamento interventivo</li>
+          <li>Aprofundamento técnico e teórico</li>
+          <li>Mais segurança na prática clínica</li>
+        </ul>
+        <p>Planos individuais e em pacote, com condições especiais.</p>
+      </div>
+      <img class="foto-bloco" src="img/erica-estudo.jpg" alt="Erica Reis lendo um livro sobre dislexia, com o DSM-5-TR sobre a mesa" width="800" height="1000" loading="lazy">
+    </div>
     <div class="planos">
       <article class="curso">
         <span class="curso-tag">Sessão avulsa</span>
@@ -412,7 +493,10 @@
         <a class="btn btn-teal" href="#agendar">Agendar</a>
       </article>
     </div>
-    <p class="planos-info">Validade dos pacotes: 60 dias. Cancelamento ou reagendamento com até 24h de antecedência. Formas de pagamento: PIX, transferência ou cartão de crédito.</p>
+    <div class="planos-rodape">
+      <p class="planos-info">Validade dos pacotes: 60 dias. Cancelamento ou reagendamento com até 24h de antecedência. Formas de pagamento: PIX, transferência ou cartão de crédito.</p>
+      <a class="btn btn-teal" href="https://wa.me/5511987868476?text=Ol%C3%A1!%20Quero%20agendar%20minha%20supervis%C3%A3o.">Agende sua supervisão pelo WhatsApp</a>
+    </div>
   </div>
 </section>
 
@@ -423,6 +507,20 @@
       <h2>Materiais para elevar sua <span class="destaque">prática</span></h2>
       <p>Conteúdos desenvolvidos para profissionais da área clínica e educacional, fundamentados na prática e em evidências científicas, com acesso imediato após a aquisição.</p>
     </div>
+    <article class="duas-col produto">
+      <img src="img/parecer-avaliativo.jpg" alt="Erica Reis trabalhando no computador, divulgação do material Parecer e Relatório Psicopedagógico" width="640" height="800" loading="lazy">
+      <div>
+        <span class="curso-tag">Produto digital · destaque</span>
+        <h3>Estrutura de Parecer <span class="destaque">Avaliativo</span></h3>
+        <p>Modelo completo e profissional de relatório psicopedagógico para psicopedagogos e profissionais da educação.</p>
+        <p>Um material detalhado que orienta a elaboração do parecer avaliativo, dá suporte à construção de diagnósticos precisos e de planos de intervenção eficazes, e ajuda a acompanhar o desenvolvimento e a aprendizagem de crianças e adolescentes com um atendimento personalizado.</p>
+        <div class="curso-preco">R$ 60,00<small>pagamento único, acesso imediato</small></div>
+        <div class="produto-acoes">
+          <a class="btn btn-teal" href="https://pay.kiwify.com.br/MKQfVA1" target="_blank" rel="noopener">Quero o modelo</a>
+          <span>Compra segura pela Kiwify.</span>
+        </div>
+      </div>
+    </article>
     <div class="cursos-grid">
       <article class="curso">
         <span class="curso-tag">Cursos</span>
@@ -495,7 +593,7 @@
 
 <section class="sobre" id="sobre">
   <div class="wrap sobre-grid">
-    <div class="sobre-foto" style="overflow:hidden"><img src="erica-reis-foto.jpg" alt="Erica Reis em seu consultório no Espaço KricaEducar" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.remove()"></div>
+    <div class="sobre-foto" style="overflow:hidden"><img src="img/erica-sobre.jpg" alt="Erica Reis sorrindo em seu consultório no Espaço KricaEducar" width="800" height="1000" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
     <div>
       <span class="eyebrow">Quem guia o espaço</span>
       <h2>Prazer, <span class="destaque">Erica Reis</span></h2>
