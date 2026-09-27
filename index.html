@@ -2,249 +2,429 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>KricaEducar | Espaço Psicopedagógico — Erica Reis</title>
 <meta name="description" content="Espaço Psicopedagógico KricaEducar: avaliação e intervenção psicopedagógica e neuropsicopedagógica, consultoria para escolas, mentoria e supervisão para profissionais, com Erica Reis.">
+<meta name="theme-color" content="#0F3947">
+<meta name="color-scheme" content="light">
 <link rel="canonical" href="https://kricaeducar.com.br/">
+<meta property="og:type" content="website">
 <meta property="og:url" content="https://kricaeducar.com.br/">
 <meta property="og:title" content="KricaEducar | Espaço Psicopedagógico — Erica Reis">
 <meta property="og:description" content="Atendimento, formação profissional e consultoria técnica com base em evidências científicas.">
 <meta property="og:image" content="https://kricaeducar.com.br/img/erica-sobre.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%230F3947'/%3E%3Cg fill='%236FC4CF'%3E%3Ccircle cx='13' cy='12' r='2.6'/%3E%3Ccircle cx='20' cy='9' r='2.2'/%3E%3Ccircle cx='27' cy='12' r='2.6'/%3E%3Ccircle cx='10' cy='20' r='2.2'/%3E%3Ccircle cx='30' cy='20' r='2.2'/%3E%3Ccircle cx='13' cy='28' r='2.4'/%3E%3Ccircle cx='27' cy='28' r='2.4'/%3E%3Ccircle cx='20' cy='31' r='2.2'/%3E%3C/g%3E%3Ccircle cx='20' cy='20' r='2.6' fill='%23E4A23C'/%3E%3C/svg%3E">
+<script>document.documentElement.classList.add("js")</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+  /* ---------- Tokens ---------- */
   :root{
-    --papel:#F2F0EA;
-    --papel-2:#EBE8E0;
+    --papel:#F4F2EC;
+    --papel-2:#ECE8DF;
+    --branco:#FFFFFF;
     --teal:#17808F;
     --teal-escuro:#0F6472;
+    --teal-claro:#6FC4CF;
+    --teal-suave:#E3F1F2;
     --petroleo:#0F3947;
-    --petroleo-70:rgba(15,57,71,.72);
-    --branco:#FFFFFF;
-    --linha:rgba(15,57,71,.14);
-    --sombra:0 18px 40px -22px rgba(15,57,71,.28);
-    --raio:18px;
+    --petroleo-2:#0B2D38;
+    --texto-2:rgba(15,57,71,.74);
+    --linha:rgba(15,57,71,.13);
+    --ambar:#E4A23C;
+    --sombra-1:0 1px 2px rgba(15,57,71,.06), 0 8px 24px -12px rgba(15,57,71,.18);
+    --sombra-2:0 2px 6px rgba(15,57,71,.06), 0 24px 48px -24px rgba(15,57,71,.35);
+    --raio:1.1rem;
+    --raio-g:1.5rem;
+    --gutter:clamp(1rem, 4vw, 2.5rem);
+    --largura:76rem;
+    --secao:clamp(4rem, 8vw, 7.5rem);
+    --serif:"Fraunces", Georgia, "Times New Roman", serif;
+    --sans:"Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --nav-h:4.25rem;
   }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
+
+  /* Escala fluida: cresce suavemente do celular à TV */
+  html{font-size:clamp(15px, .3vw + 13.9px, 17px);scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 1rem);-webkit-text-size-adjust:100%}
+  @media (min-width:1920px){html{font-size:18px}}
+  @media (min-width:2400px){html{font-size:21px}}
+  @media (min-width:3200px){html{font-size:27px}}
+
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
   body{
-    font-family:"Instrument Sans",sans-serif;
+    font-family:var(--sans);font-size:1rem;line-height:1.65;color:var(--petroleo);
     background:var(--papel);
-    color:var(--petroleo);
-    line-height:1.6;
-    position:relative;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    overflow-x:hidden;
   }
-  body::before{
-    content:"";
-    position:fixed;inset:0;
-    pointer-events:none;
-    opacity:.5;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.06 0 0 0 0 0.22 0 0 0 0 0.28 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
-    z-index:1;
-  }
-  main,header,footer{position:relative;z-index:2}
-  h1,h2,h3,.serif{font-family:"Fraunces",serif;font-weight:500;line-height:1.15}
+  img{max-width:100%;height:auto;display:block}
+  a{color:inherit}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.14;letter-spacing:-.01em;text-wrap:balance}
+  p{text-wrap:pretty}
   .destaque{color:var(--teal);font-style:italic}
-  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .wrap{width:min(100% - 2*var(--gutter), var(--largura));margin-inline:auto}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  :focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
+
   .eyebrow{
-    display:inline-flex;align-items:center;gap:10px;
-    font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--teal-escuro);font-weight:600;
+    display:inline-flex;align-items:center;gap:.65rem;
+    font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--teal-escuro);
   }
-  .eyebrow::before{content:"";width:26px;height:1px;background:var(--teal)}
+  .eyebrow::before{content:"";width:1.6rem;height:1px;background:currentColor;opacity:.7}
+
+  /* ---------- Botões ---------- */
   .btn{
-    display:inline-block;padding:14px 30px;border-radius:999px;
-    font-weight:600;font-size:.95rem;text-decoration:none;
-    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+    display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+    min-height:3rem;padding:.8rem 1.6rem;border-radius:999px;border:1.5px solid transparent;
+    font:600 .95rem/1.2 var(--sans);text-decoration:none;text-align:center;cursor:pointer;
+    transition:transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
   }
-  .btn:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
-  .btn-teal{background:var(--teal);color:#fff;box-shadow:var(--sombra)}
-  .btn-teal:hover{background:var(--teal-escuro);transform:translateY(-2px)}
-  .btn-linha{border:1.5px solid var(--petroleo);color:var(--petroleo)}
-  .btn-linha:hover{background:var(--petroleo);color:var(--papel)}
-
-  nav{
-    position:sticky;top:0;z-index:50;
-    background:rgba(242,240,234,.88);backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--linha);
+  .btn svg{width:1.15em;height:1.15em;flex:none}
+  .btn-primario{background:var(--teal);color:#fff;box-shadow:0 10px 24px -12px rgba(23,128,143,.8)}
+  .btn-contorno{border-color:rgba(15,57,71,.35);color:var(--petroleo);background:transparent}
+  .btn-claro{background:#fff;color:var(--petroleo)}
+  .btn-contorno-claro{border-color:rgba(244,242,236,.45);color:var(--papel)}
+  @media (hover:hover){
+    .btn-primario:hover{background:var(--teal-escuro);transform:translateY(-2px)}
+    .btn-contorno:hover{border-color:var(--petroleo);background:var(--petroleo);color:var(--papel)}
+    .btn-claro:hover{background:var(--teal-suave);transform:translateY(-2px)}
+    .btn-contorno-claro:hover{border-color:var(--papel);background:rgba(255,255,255,.08)}
   }
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
-  .logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--petroleo)}
-  .logo-nome{font-family:"Fraunces",serif;font-size:1.3rem;line-height:1.05}
-  .logo-nome small{display:block;font-family:"Instrument Sans",sans-serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-escuro)}
-  .nav-links{display:flex;gap:26px;align-items:center;list-style:none}
-  .nav-links a{color:var(--petroleo-70);text-decoration:none;font-size:.92rem;font-weight:500}
-  .nav-links a:hover{color:var(--teal)}
-  .nav-cta{background:var(--teal);color:#fff!important;padding:9px 20px;border-radius:999px}
-  .nav-cta:hover{background:var(--teal-escuro)}
+  .acoes{display:flex;flex-wrap:wrap;gap:.9rem;align-items:center}
 
-  .hero{padding:84px 0 92px;overflow:hidden}
-  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
-  .hero h1{font-size:clamp(2.3rem,4.8vw,3.7rem);margin:20px 0 22px}
-  .hero p{font-size:1.1rem;color:var(--petroleo-70);max-width:35rem;margin-bottom:34px}
-  .hero-acoes{display:flex;gap:16px;flex-wrap:wrap}
-  .hero-nota{margin-top:26px;font-size:.85rem;color:var(--petroleo-70)}
-  .hero-arte{display:flex;justify-content:center;position:relative}
-  .hero-foto{position:relative;width:100%;max-width:400px}
-  .hero-foto img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:var(--raio);box-shadow:0 28px 60px -30px rgba(15,57,71,.55)}
-  .hero-foto svg{position:absolute;width:120px;height:120px;left:-44px;bottom:-40px;z-index:-1}
-  .hero-foto figcaption{position:absolute;right:-14px;bottom:28px;background:var(--branco);border:1px solid var(--linha);border-radius:14px;padding:12px 16px;box-shadow:var(--sombra);font-size:.8rem;line-height:1.35;color:var(--petroleo-70)}
-  .hero-foto figcaption strong{display:block;font-family:"Fraunces",serif;font-size:1rem;font-weight:500;color:var(--petroleo)}
-  .duas-col{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
-  .duas-col.inversa{grid-template-columns:.9fr 1.1fr}
-  .foto-bloco{width:100%;border-radius:var(--raio);display:block;border:1px solid var(--linha);box-shadow:var(--sombra)}
-  .espaco{margin-top:72px}
-  .espaco h3{font-size:1.6rem;margin:14px 0 12px}
-  .espaco p{color:var(--petroleo-70)}
-  .supervisao{margin:56px 0 34px}
-  .supervisao .grupo-titulo{margin:0 0 10px}
-  .supervisao .tagline{font-family:"Fraunces",serif;font-style:italic;font-size:1.15rem;color:var(--teal-escuro);margin-bottom:14px}
-  .supervisao p{color:var(--petroleo-70);font-size:.97rem}
-  .checklist{list-style:none;margin:22px 0 18px;display:grid;gap:10px}
-  .checklist li{display:flex;gap:12px;align-items:flex-start;font-weight:500}
-  .checklist li::before{content:"";flex:none;width:20px;height:20px;margin-top:2px;border-radius:50%;background:var(--teal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-7' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat}
-  .hero-foto img,.foto-bloco,.produto img,.galeria img{height:auto}
-  .supervisao .foto-bloco{aspect-ratio:1/1;object-fit:cover;object-position:50% 25%}
-  .planos-rodape{margin-top:30px;display:flex;gap:18px 28px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-  .planos-rodape .planos-info{margin-top:0;max-width:40rem}
-  .intervencao{margin-top:64px;background:var(--branco);border:1px solid var(--linha);border-radius:calc(var(--raio) + 6px);padding:40px}
-  .intervencao h3{font-size:clamp(1.5rem,2.8vw,1.9rem);margin:12px 0 14px}
-  .intervencao > .duas-col > div > p{color:var(--petroleo-70);margin-bottom:12px}
-  .habilidades{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:10px 18px;margin-top:6px}
-  .habilidades li{background:var(--papel);border:1px solid var(--linha);border-radius:12px;padding:10px 14px;font-size:.9rem;font-weight:500;display:flex;gap:10px;align-items:center}
-  .habilidades li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--teal)}
-  .intervencao-titulo{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-escuro);font-weight:600;margin-bottom:12px}
-  .objetivo{margin-top:26px;padding:18px 22px;border-left:3px solid var(--teal);background:var(--papel);border-radius:0 12px 12px 0;font-family:"Fraunces",serif;font-size:1.08rem;color:var(--petroleo)}
-  .galeria{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
-  .galeria figure{margin:0}
-  .galeria img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;display:block;border:1px solid var(--linha)}
-  .galeria figcaption{font-size:.8rem;color:var(--petroleo-70);margin-top:8px}
-  .produto{background:var(--branco);border:1px solid var(--linha);border-radius:calc(var(--raio) + 6px);padding:28px;margin-bottom:28px;box-shadow:var(--sombra);grid-template-columns:.75fr 1.25fr;gap:44px}
-  .produto img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--raio);display:block}
-  .produto h3{font-size:clamp(1.6rem,3vw,2.1rem);margin:12px 0 14px}
-  .produto p{color:var(--petroleo-70);margin-bottom:12px}
-  .produto .curso-preco{margin:18px 0 20px;font-size:2.1rem}
-  .produto-acoes{display:flex;gap:14px 20px;align-items:center;flex-wrap:wrap}
-  .produto-acoes span{font-size:.82rem;color:var(--petroleo-70)}
+  /* ---------- Navegação ---------- */
+  .topo{
+    position:sticky;top:0;z-index:60;
+    background:rgba(244,242,236,.86);-webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px);
+    border-bottom:1px solid transparent;transition:border-color .25s ease, box-shadow .25s ease;
+    padding-top:env(safe-area-inset-top);
+  }
+  .topo.rolou{border-bottom-color:var(--linha);box-shadow:0 10px 30px -24px rgba(15,57,71,.5)}
+  .topo-in{height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--petroleo);flex:none}
+  .logo svg{width:2.4rem;height:2.4rem}
+  .logo-nome{font-family:var(--serif);font-size:1.28rem;line-height:1.02}
+  .logo-nome small{display:block;font-family:var(--sans);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-escuro);margin-top:.2rem}
+  .menu{display:flex;align-items:center;gap:clamp(1rem, 2vw, 1.9rem);list-style:none}
+  .menu a{text-decoration:none;font-size:.93rem;font-weight:500;color:var(--texto-2);padding:.4rem 0;position:relative}
+  .menu a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--teal);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+  @media (hover:hover){.menu a:not(.btn):hover{color:var(--petroleo)}.menu a:not(.btn):hover::after{transform:scaleX(1)}}
+  .menu .btn{min-height:2.6rem;padding:.55rem 1.2rem;font-size:.88rem;color:#fff}
+  .menu-botao{
+    display:none;width:2.9rem;height:2.9rem;border-radius:.8rem;border:1px solid var(--linha);background:var(--branco);
+    align-items:center;justify-content:center;cursor:pointer;color:var(--petroleo)
+  }
+  .menu-botao svg{width:1.35rem;height:1.35rem}
+  .menu-botao .fechar{display:none}
+  .menu-aberto .menu-botao .abrir{display:none}
+  .menu-aberto .menu-botao .fechar{display:block}
 
-  .faixa{border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);background:var(--papel-2)}
-  .faixa-in{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:36px 0;text-align:center}
-  .faixa strong{font-family:"Fraunces",serif;font-size:1.35rem;display:block;color:var(--teal-escuro)}
-  .faixa span{font-size:.86rem;color:var(--petroleo-70)}
+  @media (max-width:980px){
+    .menu-botao{display:inline-flex}
+    .menu{
+      position:fixed;left:0;right:0;top:calc(var(--nav-h) + env(safe-area-inset-top));bottom:0;
+      flex-direction:column;align-items:stretch;gap:0;
+      padding:1rem var(--gutter) calc(2rem + env(safe-area-inset-bottom));
+      background:var(--papel);border-top:1px solid var(--linha);overflow-y:auto;
+      opacity:0;visibility:hidden;transform:translateY(-.5rem);transition:opacity .2s ease, transform .2s ease, visibility .2s;
+    }
+    .menu-aberto .menu{opacity:1;visibility:visible;transform:none}
+    .menu li{border-bottom:1px solid var(--linha)}
+    .menu li:last-child{border-bottom:0;margin-top:1.4rem}
+    .menu a:not(.btn){display:block;padding:1.05rem .2rem;font-family:var(--serif);font-size:1.3rem;color:var(--petroleo)}
+    .menu a:not(.btn)::after{display:none}
+    .menu .btn{width:100%;min-height:3.2rem;font-size:1rem}
+    body.travado{overflow:hidden}
+    .topo.menu-aberto{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--papel)}
+  }
 
-  section{padding:92px 0}
-  .cabeca{max-width:40rem;margin-bottom:52px}
-  .cabeca h2{font-size:clamp(1.9rem,3.6vw,2.7rem);margin:16px 0 14px}
-  .cabeca p{color:var(--petroleo-70);font-size:1.05rem}
+  /* ---------- Hero ---------- */
+  .hero{padding:clamp(2.5rem, 6vw, 5.5rem) 0 clamp(3.5rem, 7vw, 6rem);position:relative;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:auto -10% -30% auto;width:min(60vw, 46rem);aspect-ratio:1;border-radius:50%;
+    background:radial-gradient(closest-side, rgba(23,128,143,.14), rgba(23,128,143,0));pointer-events:none
+  }
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:clamp(2rem, 5vw, 4.5rem);align-items:center;position:relative}
+  .hero h1{font-size:clamp(2.15rem, 1.4rem + 3.4vw, 4rem);margin:1.1rem 0 1.25rem}
+  .hero-texto > p{font-size:clamp(1.02rem, .95rem + .3vw, 1.15rem);color:var(--texto-2);max-width:36rem;margin-bottom:2rem}
+  .selos{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2rem;list-style:none}
+  .selos li{display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:500;color:var(--petroleo);background:var(--branco);border:1px solid var(--linha);border-radius:999px;padding:.45rem .9rem}
+  .selos li::before{content:"";width:.45rem;height:.45rem;border-radius:50%;background:var(--teal)}
+  .hero-foto{position:relative;justify-self:center;width:100%;max-width:27rem;margin:0}
+  .hero-foto img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--raio-g);box-shadow:var(--sombra-2)}
+  .hero-foto .pontos{position:absolute;width:7.5rem;left:-2.8rem;bottom:-2.4rem;z-index:-1}
+  .hero-foto figcaption{
+    position:absolute;right:-1rem;bottom:1.6rem;background:var(--branco);border:1px solid var(--linha);border-radius:1rem;
+    padding:.8rem 1.05rem;box-shadow:var(--sombra-1);font-size:.8rem;line-height:1.35;color:var(--texto-2)
+  }
+  .hero-foto figcaption strong{display:block;font-family:var(--serif);font-weight:500;font-size:1.02rem;color:var(--petroleo)}
 
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .cards-2{grid-template-columns:repeat(2,1fr)}
+  /* ---------- Públicos ---------- */
+  .publicos{border-block:1px solid var(--linha);background:var(--papel-2)}
+  .publicos-in{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+  .publico{display:flex;gap:1rem;align-items:flex-start;padding:1.6rem clamp(.5rem, 2vw, 1.8rem);text-decoration:none;transition:background-color .2s ease}
+  .publico + .publico{border-left:1px solid var(--linha)}
+  .publico svg{flex:none;width:2.4rem;height:2.4rem;padding:.55rem;border-radius:.8rem;background:var(--branco);color:var(--teal);border:1px solid var(--linha)}
+  .publico strong{display:block;font-family:var(--serif);font-weight:500;font-size:1.18rem;color:var(--petroleo)}
+  .publico span{font-size:.86rem;color:var(--texto-2)}
+  @media (hover:hover){.publico:hover{background:rgba(255,255,255,.55)}}
+
+  /* ---------- Seções ---------- */
+  section{padding-block:var(--secao)}
+  .sec-clara{background:var(--papel-2);border-block:1px solid var(--linha)}
+  .sec-branca{background:var(--branco);border-block:1px solid var(--linha)}
+  .cabeca{max-width:42rem;margin-bottom:clamp(2rem, 4vw, 3.25rem)}
+  .cabeca.centro{margin-inline:auto;text-align:center}
+  .cabeca h2{font-size:clamp(1.8rem, 1.3rem + 2vw, 2.9rem);margin:.9rem 0 .9rem}
+  .cabeca p{color:var(--texto-2);font-size:clamp(1rem, .96rem + .2vw, 1.08rem)}
+
+  .grade{display:grid;gap:clamp(1rem, 2vw, 1.5rem);grid-template-columns:repeat(auto-fit, minmax(min(100%, 17rem), 1fr))}
+  .grade-2{grid-template-columns:repeat(auto-fit, minmax(min(100%, 22rem), 1fr))}
+
   .card{
     background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);
-    padding:30px 26px;
-    transition:transform .18s ease, box-shadow .18s ease;
+    padding:clamp(1.4rem, 2.5vw, 2rem);box-shadow:var(--sombra-1);
+    transition:transform .25s ease, box-shadow .25s ease;height:100%;
   }
-  .card:hover{transform:translateY(-4px);box-shadow:var(--sombra)}
-  .card h3{font-size:1.25rem;margin:16px 0 10px}
-  .card p{font-size:.93rem;color:var(--petroleo-70)}
-  .card ul{list-style:none;margin-top:14px;font-size:.9rem;color:var(--petroleo-70)}
-  .card li{padding-left:18px;position:relative;margin-bottom:8px}
-  .card li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teal);position:absolute;left:0;top:9px}
+  @media (hover:hover){.card:hover{transform:translateY(-4px);box-shadow:var(--sombra-2)}}
+  .card .icone{width:2.9rem;height:2.9rem;border-radius:.9rem;background:var(--teal-suave);color:var(--teal);display:grid;place-items:center;margin-bottom:1.1rem}
+  .card .icone svg{width:1.45rem;height:1.45rem}
+  .card h3{font-size:clamp(1.15rem, 1.05rem + .35vw, 1.35rem);margin-bottom:.6rem}
+  .card p{font-size:.95rem;color:var(--texto-2)}
+  .lista{list-style:none;margin-top:1.1rem;display:grid;gap:.55rem;font-size:.93rem;color:var(--texto-2)}
+  .lista li{position:relative;padding-left:1.6rem}
+  .lista li::before{
+    content:"";position:absolute;left:0;top:.3rem;width:1.05rem;height:1.05rem;border-radius:50%;
+    background:var(--teal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-7' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat
+  }
 
-  .escuro{background:var(--petroleo);color:var(--papel)}
+  /* ---------- Intervenção ---------- */
+  .painel{
+    margin-top:clamp(2rem, 4vw, 3.5rem);background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio-g);
+    padding:clamp(1.4rem, 3.5vw, 3rem);box-shadow:var(--sombra-1)
+  }
+  .duas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.5rem, 4vw, 3.5rem);align-items:start}
+  .duas.centro{align-items:center}
+  .painel h3{font-size:clamp(1.45rem, 1.2rem + 1vw, 2rem);margin:.8rem 0 .9rem}
+  .painel p{color:var(--texto-2)}
+  .objetivo{margin-top:1.4rem;padding:1.1rem 1.3rem;border-left:3px solid var(--teal);background:var(--papel);border-radius:0 .9rem .9rem 0;font-family:var(--serif);font-size:1.08rem;color:var(--petroleo)!important}
+  .rotulo{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-escuro);font-weight:600;margin-bottom:.9rem}
+  .chips{list-style:none;display:grid;grid-template-columns:repeat(auto-fill, minmax(min(100%, 13.5rem), 1fr));gap:.6rem}
+  .chips li{display:flex;gap:.65rem;align-items:center;background:var(--papel);border:1px solid var(--linha);border-radius:.8rem;padding:.7rem .9rem;font-size:.9rem;font-weight:500;line-height:1.35}
+  .chips li::before{content:"";flex:none;width:.5rem;height:.5rem;border-radius:50%;background:var(--teal)}
+  .galeria{display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 15rem), 1fr));gap:1rem;margin-top:clamp(1.5rem, 3vw, 2.2rem)}
+  .galeria figure{margin:0}
+  .galeria img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:1rem}
+  .galeria figcaption{font-size:.82rem;color:var(--texto-2);margin-top:.55rem}
+
+  .faixa-cta{
+    margin-top:clamp(2rem, 4vw, 3rem);display:flex;flex-wrap:wrap;gap:1rem 1.6rem;align-items:center;justify-content:space-between;
+    background:var(--teal-suave);border:1px solid rgba(23,128,143,.2);border-radius:var(--raio-g);padding:clamp(1.2rem, 3vw, 1.8rem) clamp(1.2rem, 3vw, 2.2rem)
+  }
+  .faixa-cta p{max-width:40rem;color:var(--petroleo);font-size:.98rem}
+  .faixa-cta strong{font-family:var(--serif);font-weight:500;font-size:1.15rem;display:block;margin-bottom:.15rem}
+
+  .espaco{margin-top:clamp(3rem, 6vw, 5rem)}
+  .foto{width:100%;border-radius:var(--raio-g);box-shadow:var(--sombra-2)}
+  .espaco h3{font-size:clamp(1.5rem, 1.2rem + 1.2vw, 2.2rem);margin:.8rem 0 .9rem}
+  .espaco p{color:var(--texto-2)}
+
+  /* ---------- Seção escura ---------- */
+  .escuro{background:var(--petroleo);color:var(--papel);position:relative;overflow:hidden}
+  .escuro::after{content:"";position:absolute;right:-12rem;top:-12rem;width:34rem;height:34rem;border-radius:50%;background:radial-gradient(closest-side, rgba(111,196,207,.16), transparent);pointer-events:none}
   .escuro .eyebrow{color:#8FD0D9}
-  .escuro .eyebrow::before{background:#8FD0D9}
-  .escuro h2 .destaque{color:#6FC4CF}
-  .escuro .cabeca p{color:rgba(242,240,234,.75)}
-  .escuro .card{background:rgba(255,255,255,.03);border-color:rgba(242,240,234,.16)}
-  .escuro .card:hover{box-shadow:none}
-  .escuro .card p,.escuro .card ul{color:rgba(242,240,234,.72)}
-  .escuro-cta{margin-top:48px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-  .escuro-cta .btn-teal{background:#fff;color:var(--petroleo);box-shadow:none}
-  .escuro-cta .btn-teal:hover{background:#e8f4f6}
-  .escuro-cta span{font-size:.88rem;color:rgba(242,240,234,.65)}
+  .escuro h2 .destaque{color:var(--teal-claro)}
+  .escuro .cabeca p{color:rgba(244,242,236,.76)}
+  .escuro .card{background:rgba(255,255,255,.04);border-color:rgba(244,242,236,.14);box-shadow:none}
+  .escuro .card h3{color:var(--papel)}
+  .escuro .card p{color:rgba(244,242,236,.74)}
+  .escuro .card .icone{background:rgba(111,196,207,.14);color:var(--teal-claro)}
+  @media (hover:hover){.escuro .card:hover{box-shadow:none;background:rgba(255,255,255,.07)}}
+  .escuro .acoes{margin-top:clamp(2rem, 4vw, 3rem)}
+  .escuro .acoes span{font-size:.9rem;color:rgba(244,242,236,.66)}
 
-  .cursos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .planos{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-  .planos-2{grid-template-columns:repeat(2,1fr)}
-  .curso{position:relative}
-  .badge{
-    position:absolute;top:-13px;left:50%;transform:translateX(-50%);
-    background:var(--teal);color:#fff;font-size:.66rem;letter-spacing:.09em;
-    text-transform:uppercase;font-weight:600;padding:5px 16px;border-radius:999px;white-space:nowrap;
+  /* ---------- Planos ---------- */
+  .subtitulo{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:.4rem 1rem;margin:0 0 1.4rem}
+  .subtitulo h3{font-size:clamp(1.4rem, 1.2rem + .9vw, 1.9rem);color:var(--teal-escuro)}
+  .subtitulo span{font-size:.88rem;color:var(--texto-2)}
+  .planos{display:grid;gap:clamp(1rem, 2vw, 1.4rem);grid-template-columns:repeat(auto-fit, minmax(min(100%, 14.5rem), 1fr));align-items:stretch}
+  .planos-2{grid-template-columns:repeat(auto-fit, minmax(min(100%, 20rem), 1fr))}
+  .plano{
+    position:relative;display:flex;flex-direction:column;background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);
+    padding:clamp(1.4rem, 2.4vw, 1.9rem);box-shadow:var(--sombra-1);transition:transform .25s ease, box-shadow .25s ease
   }
-  .destaque-card{border-color:var(--teal);box-shadow:var(--sombra)}
-  .preco-de{font-family:"Instrument Sans",sans-serif;font-size:.85rem;color:var(--petroleo-70);text-decoration:line-through;display:block;font-weight:400}
-  .planos-info{margin-top:28px;font-size:.85rem;color:var(--petroleo-70)}
-  .grupo-titulo{font-size:1.45rem;margin:48px 0 26px;color:var(--teal-escuro)}
-  .grupo-titulo:first-of-type{margin-top:0}
-  .curso{
-    background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);
-    padding:32px 28px;display:flex;flex-direction:column;
-    transition:transform .18s ease, box-shadow .18s ease;
+  @media (hover:hover){.plano:hover{transform:translateY(-4px);box-shadow:var(--sombra-2)}}
+  .plano .tag{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-escuro);font-weight:600;margin-bottom:.7rem}
+  .plano h4{font-family:var(--serif);font-weight:500;font-size:1.35rem;line-height:1.2;margin-bottom:.5rem}
+  .plano p{font-size:.92rem;color:var(--texto-2);flex:1}
+  .preco{margin:1.3rem 0 1.2rem;font-family:var(--serif);font-size:clamp(1.7rem, 1.5rem + .8vw, 2.1rem);line-height:1.1;color:var(--petroleo)}
+  .preco small{display:block;font-family:var(--sans);font-size:.8rem;font-weight:400;color:var(--texto-2);margin-top:.3rem}
+  .preco .de{display:block;font-family:var(--sans);font-size:.82rem;color:var(--texto-2);text-decoration:line-through;margin-bottom:.15rem}
+  .plano .btn{width:100%}
+  .plano.popular{border:2px solid var(--teal);box-shadow:var(--sombra-2)}
+  .selo-popular{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);background:var(--teal);color:#fff;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:.35rem .95rem;border-radius:999px;white-space:nowrap}
+  .supervisao{margin:clamp(3rem, 6vw, 5rem) 0 clamp(1.8rem, 3vw, 2.4rem)}
+  .supervisao h3{font-size:clamp(1.55rem, 1.25rem + 1.2vw, 2.25rem);color:var(--petroleo);margin:.8rem 0 .7rem}
+  .supervisao .tagline{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--teal-escuro);margin-bottom:1rem}
+  .supervisao p{color:var(--texto-2)}
+  .supervisao .lista{font-size:.98rem;color:var(--petroleo);font-weight:500;margin:1.3rem 0}
+  .supervisao .foto{aspect-ratio:1;object-fit:cover;object-position:50% 25%}
+  .rodape-planos{margin-top:1.6rem;display:flex;flex-wrap:wrap;gap:1rem 1.6rem;align-items:center;justify-content:space-between}
+  .rodape-planos p{max-width:42rem;font-size:.86rem;color:var(--texto-2)}
+
+  /* ---------- Produto ---------- */
+  .produto{
+    display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:clamp(1.5rem, 4vw, 3rem);align-items:center;
+    background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio-g);padding:clamp(1rem, 2.5vw, 1.8rem);
+    box-shadow:var(--sombra-2);margin-bottom:clamp(1.5rem, 3vw, 2rem)
   }
-  .curso:hover{transform:translateY(-4px);box-shadow:var(--sombra)}
-  .curso-tag{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-escuro);font-weight:600;margin-bottom:14px}
-  .curso h3{font-size:1.32rem;margin-bottom:12px}
-  .curso p{font-size:.93rem;color:var(--petroleo-70);flex:1}
-  .curso-preco{margin:22px 0 18px;font-family:"Fraunces",serif;font-size:1.7rem;color:var(--teal-escuro)}
-  .curso-preco small{font-family:"Instrument Sans",sans-serif;font-size:.8rem;color:var(--petroleo-70);display:block;font-weight:400}
-  .curso .btn{text-align:center}
+  .produto img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--raio)}
+  .produto .texto{padding:clamp(0rem, 1.5vw, 1rem) clamp(.2rem, 1.5vw, 1rem) clamp(.4rem, 1.5vw, 1rem) 0}
+  .produto h3{font-size:clamp(1.6rem, 1.3rem + 1.3vw, 2.4rem);margin:.8rem 0 1rem}
+  .produto p{color:var(--texto-2);margin-bottom:.8rem}
+  .produto .preco{margin:1.4rem 0}
+  .produto .acoes span{font-size:.84rem;color:var(--texto-2)}
+  .curso-card{display:flex;flex-direction:column}
+  .curso-card p{flex:1}
+  .curso-card .btn{margin-top:1.4rem;width:100%}
 
-  .valores{background:var(--papel-2);border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);padding:56px 0}
-  .valores-in{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
-  .valor h3{font-size:1.1rem;margin-bottom:8px;color:var(--teal-escuro)}
-  .valor p{font-size:.9rem;color:var(--petroleo-70)}
+  /* ---------- Valores ---------- */
+  .valores{padding-block:clamp(2.5rem, 5vw, 4rem)}
+  .valores-in{display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 15rem), 1fr));gap:clamp(1.2rem, 3vw, 2.4rem)}
+  .valor{display:flex;gap:1rem;align-items:flex-start}
+  .valor .icone{flex:none;width:2.6rem;height:2.6rem;border-radius:.8rem;background:var(--branco);border:1px solid var(--linha);color:var(--teal);display:grid;place-items:center}
+  .valor .icone svg{width:1.3rem;height:1.3rem}
+  .valor h3{font-size:1.12rem;margin-bottom:.3rem;color:var(--teal-escuro)}
+  .valor p{font-size:.9rem;color:var(--texto-2)}
 
-  .sobre-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
-  .sobre-foto{
-    aspect-ratio:4/5;border-radius:var(--raio);
-    background:linear-gradient(160deg,var(--papel-2),#DDD8CC);
-    border:1px solid var(--linha);
-    display:flex;align-items:center;justify-content:center;
-    color:var(--petroleo-70);font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;
+  /* ---------- Agenda (em desenvolvimento) ---------- */
+  .agenda{
+    display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(1.2rem, 3vw, 2.2rem);align-items:center;
+    background:var(--papel);border:1px dashed rgba(23,128,143,.45);border-radius:var(--raio-g);padding:clamp(1.4rem, 3.5vw, 2.6rem)
   }
-  .sobre h2{font-size:clamp(1.9rem,3.4vw,2.6rem);margin:16px 0 18px}
-  .sobre p{color:var(--petroleo-70);margin-bottom:16px}
-  .sobre-assinatura{font-family:"Fraunces",serif;font-style:italic;font-size:1.25rem;color:var(--teal-escuro);margin-top:10px}
+  .agenda .icone{width:4rem;height:4rem;border-radius:1.1rem;background:var(--teal-suave);color:var(--teal);display:grid;place-items:center}
+  .agenda .icone svg{width:2rem;height:2rem}
+  .em-breve{display:inline-flex;align-items:center;gap:.45rem;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#8A5A12;background:#FBEBD0;border-radius:999px;padding:.3rem .8rem;margin-bottom:.7rem}
+  .em-breve::before{content:"";width:.45rem;height:.45rem;border-radius:50%;background:var(--ambar);animation:pulsar 1.8s ease-in-out infinite}
+  @keyframes pulsar{50%{opacity:.35}}
+  .agenda h3{font-size:clamp(1.3rem, 1.1rem + .8vw, 1.7rem);margin-bottom:.4rem}
+  .agenda p{color:var(--texto-2);font-size:.95rem}
 
+  /* ---------- Sobre ---------- */
+  .sobre-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(2rem, 5vw, 4.5rem);align-items:center}
+  .sobre-foto{position:relative}
+  .sobre-foto img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--raio-g);box-shadow:var(--sombra-2)}
+  .sobre h2{font-size:clamp(1.9rem, 1.4rem + 2vw, 3rem);margin:.9rem 0 1.1rem}
+  .sobre p{color:var(--texto-2);margin-bottom:1rem}
+  .assinatura{font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem, 1rem + .5vw, 1.4rem);line-height:1.4;color:var(--teal-escuro)!important;border-left:3px solid var(--teal);padding-left:1.1rem;margin-top:1.6rem}
+
+  /* ---------- CTA final ---------- */
   .cta-final{text-align:center}
-  .cta-final h2{font-size:clamp(2rem,4.2vw,3rem);max-width:36rem;margin:18px auto 16px}
-  .cta-final p{color:var(--petroleo-70);max-width:32rem;margin:0 auto 36px}
+  .cta-final h2{font-size:clamp(2rem, 1.4rem + 2.8vw, 3.4rem);max-width:40rem;margin:1rem auto 1rem}
+  .cta-final p{color:rgba(244,242,236,.76);max-width:34rem;margin:0 auto 2rem}
+  .cta-final .acoes{justify-content:center;margin-top:0}
 
-  footer{
-    border-top:1px solid var(--linha);padding:44px 0;
-    font-size:.85rem;color:var(--petroleo-70);
-  }
-  .footer-in{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  /* ---------- Rodapé ---------- */
+  .rodape{background:var(--petroleo-2);color:rgba(244,242,236,.78);padding:clamp(3rem, 6vw, 4.5rem) 0 calc(1.8rem + env(safe-area-inset-bottom));font-size:.92rem}
+  .rodape-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(2, minmax(0,1fr));gap:clamp(2rem, 5vw, 4rem)}
+  .rodape .logo{color:var(--papel)}
+  .rodape .logo-nome small{color:var(--teal-claro)}
+  .rodape-grid > div > p{margin-top:1rem;max-width:26rem}
+  .rodape h4{font-family:var(--sans);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-claro);margin-bottom:1rem;font-weight:600}
+  .rodape ul{list-style:none;display:grid;gap:.55rem}
+  .rodape a{text-decoration:none;color:rgba(244,242,236,.86)}
+  @media (hover:hover){.rodape a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}}
+  .rodape-base{margin-top:clamp(2rem, 4vw, 3rem);padding-top:1.4rem;border-top:1px solid rgba(244,242,236,.12);display:flex;flex-wrap:wrap;gap:.6rem 1.5rem;justify-content:space-between;font-size:.82rem;color:rgba(244,242,236,.55)}
 
-  @media(max-width:900px){
-    .hero-grid,.sobre-grid,.duas-col,.duas-col.inversa{grid-template-columns:1fr}
-    .duas-col{gap:32px}
-    .produto{padding:20px;grid-template-columns:1fr}
-    .intervencao{padding:22px}
-    .habilidades,.galeria{grid-template-columns:1fr}
-    .hero-foto{max-width:300px}
-    .hero-foto figcaption{right:-6px}
-    .hero-foto svg{display:none}
-    .hero-arte{order:-1}
-    .cards,.cards-2,.cursos-grid,.valores-in,.planos,.planos-2{grid-template-columns:1fr}
-    .faixa-in{grid-template-columns:1fr;gap:18px}
-    .nav-links li:not(:last-child){display:none}
-    section{padding:70px 0}
+  /* ---------- WhatsApp flutuante ---------- */
+  .zap{
+    position:fixed;z-index:70;right:calc(1rem + env(safe-area-inset-right));bottom:calc(1rem + env(safe-area-inset-bottom));
+    display:inline-flex;align-items:center;gap:.6rem;min-height:3.4rem;padding:.8rem 1.2rem .8rem 1rem;border-radius:999px;
+    background:var(--teal);color:#fff;text-decoration:none;font-weight:600;font-size:.92rem;
+    box-shadow:0 14px 30px -12px rgba(15,57,71,.7);transition:transform .2s ease, background-color .2s ease, opacity .25s ease;
   }
-  @media(prefers-reduced-motion:reduce){
-    *{transition:none!important;scroll-behavior:auto}
+  .zap svg{width:1.45rem;height:1.45rem}
+  @media (hover:hover){.zap:hover{background:var(--teal-escuro);transform:translateY(-2px)}}
+  .zap.oculto{opacity:0;pointer-events:none;transform:translateY(.8rem)}
+
+  /* ---------- Animação de entrada ---------- */
+  .js .revelar{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease}
+  .js .revelar.visivel{opacity:1;transform:none}
+
+  /* ---------- Responsivo ---------- */
+  @media (max-width:980px){
+    .hero-grid{grid-template-columns:1fr}
+    .hero-foto{max-width:24rem}
+    .duas,.sobre-grid{grid-template-columns:1fr}
+    .supervisao .foto{max-height:28rem}
+    .sobre-foto{max-width:28rem}
+    .produto{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
+    .agenda{grid-template-columns:auto minmax(0,1fr)}
+    .agenda .btn{grid-column:1/-1;justify-self:start}
+    .rodape-grid{grid-template-columns:1fr 1fr}
+    .rodape-grid > div:first-child{grid-column:1/-1}
+  }
+  @media (max-width:760px){
+    .publicos-in{grid-template-columns:1fr}
+    .publico{padding:1.1rem .2rem}
+    .publico + .publico{border-left:0;border-top:1px solid var(--linha)}
+    .produto{grid-template-columns:1fr}
+    .produto img{aspect-ratio:1;object-position:50% 20%}
+    .produto .texto{padding:0 .3rem .6rem}
+    .hero-foto figcaption{right:.8rem;bottom:.8rem}
+    .hero-foto .pontos{display:none}
+  }
+  @media (max-width:560px){
+    .hero .acoes .btn,.faixa-cta .btn,.rodape-planos .btn,.produto .acoes .btn,.cta-final .acoes .btn,.escuro .acoes .btn{width:100%}
+    .agenda{grid-template-columns:1fr}
+    .agenda .icone{width:3.2rem;height:3.2rem}
+    .agenda .btn{width:100%}
+    .rodape-grid{grid-template-columns:1fr}
+    .zap span{display:none}
+    .zap{padding:.8rem;min-height:3.4rem;width:3.4rem;justify-content:center}
+    .logo-nome{font-size:1.15rem}
+  }
+  @media (max-width:360px){
+    .logo-nome small{letter-spacing:.12em}
+    .selos li{font-size:.78rem}
+  }
+  /* Telas grandes (monitores amplos e TVs) */
+  @media (min-width:1600px){
+    :root{--largura:82rem}
+    .hero-foto{max-width:30rem}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{transition:none!important;animation:none!important}
+    .js .revelar{opacity:1;transform:none}
   }
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="wrap nav-in">
-    <a class="logo" href="#" aria-label="KricaEducar, página inicial">
-      <svg width="38" height="38" viewBox="0 0 40 40" aria-hidden="true">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M20 11.5a8 8 0 0 1-11.7 7.1L4 20l1.4-4.1A8 8 0 1 1 20 11.5z"/><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" d="M8.5 10.5h7M8.5 13.5h4.5"/></symbol>
+  <symbol id="i-seta" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-familia" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="7" r="3"/><circle cx="17" cy="9" r="2.3"/><path d="M3 20v-1.5A4.5 4.5 0 0 1 7.5 14h1A4.5 4.5 0 0 1 13 18.5V20M14.5 20v-1a3.5 3.5 0 0 1 3.5-3.5h0a3.5 3.5 0 0 1 3.5 3.5v1"/></g></symbol>
+  <symbol id="i-escola" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 5l9 4.5-9 4.5z"/><path d="M7 11.5V16c0 1.4 2.2 2.5 5 2.5s5-1.1 5-2.5v-4.5M21 9.5V15"/></g></symbol>
+  <symbol id="i-profissional" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H20v14H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20M9 8.5h7M9 11.5h5"/></g></symbol>
+  <symbol id="i-lupa" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></g></symbol>
+  <symbol id="i-plano" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16"/><path d="m7 15 4-4 3 3 5-6"/></g></symbol>
+  <symbol id="i-cerebro" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 4A3 3 0 0 0 6.6 6.2 3 3 0 0 0 4.5 11a3 3 0 0 0 1 4.6A3 3 0 0 0 9.5 20h.5V4z"/><path d="M14.5 4a3 3 0 0 1 2.9 2.2 3 3 0 0 1 2.1 4.8 3 3 0 0 1-1 4.6 3 3 0 0 1-4 4.4H14V4z"/></g></symbol>
+  <symbol id="i-balanca" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M8 20h8M5 7h14"/><path d="M5 7 2.5 13a3 3 0 0 0 5 0zM19 7l-2.5 6a3 3 0 0 0 5 0z"/></g></symbol>
+  <symbol id="i-coracao" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 20s-7.5-4.4-7.5-10A4.3 4.3 0 0 1 12 7.3 4.3 4.3 0 0 1 19.5 10c0 5.6-7.5 10-7.5 10z"/></symbol>
+  <symbol id="i-calendario" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4M8 14h2M12 14h2M8 17h2"/></g></symbol>
+  <symbol id="i-grupo" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"/><circle cx="5" cy="10" r="2"/><circle cx="19" cy="10" r="2"/><path d="M7 19v-1a5 5 0 0 1 10 0v1M2 18v-.5A3 3 0 0 1 5 14.5M22 18v-.5a3 3 0 0 0-3-3"/></g></symbol>
+  <symbol id="i-palestra" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="11" rx="2"/><path d="M12 15v5M8 20h8M7 9h6"/></g></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></g></symbol>
+  <symbol id="i-supervisao" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h11v8H9l-3 3v-3H4z"/><path d="M15 9h5v8h-2v3l-3-3h-4v-2"/></g></symbol>
+</svg>
+
+<header class="topo" id="topo">
+  <div class="wrap topo-in">
+    <a class="logo" href="#inicio" aria-label="KricaEducar, voltar ao início">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
         <g fill="#17808F">
           <circle cx="12" cy="10" r="2.4"/><circle cx="20" cy="7" r="2"/><circle cx="28" cy="10" r="2.4"/>
           <circle cx="8" cy="18" r="2"/><circle cx="16" cy="16" r="1.6"/><circle cx="24" cy="16" r="1.6"/><circle cx="32" cy="18" r="2"/>
@@ -256,60 +436,69 @@
       </svg>
       <span class="logo-nome">KricaEducar<small>Espaço Psicopedagógico</small></span>
     </a>
-    <ul class="nav-links">
-      <li><a href="#atendimento">Atendimento</a></li>
-      <li><a href="#escolas">Escolas</a></li>
-      <li><a href="#profissionais">Profissionais</a></li>
-      <li><a href="#cursos">Cursos</a></li>
-      <li><a class="nav-cta" href="#agendar">Agendar atendimento</a></li>
-    </ul>
-  </div>
-</nav>
-
-<main>
-<header class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow">Espaço Psicopedagógico KricaEducar</span>
-      <h1>Desenvolvimento, aprendizagem e <span class="destaque">ciência</span> aplicada à prática</h1>
-      <p>Atendimento especializado, formação profissional e consultoria técnica para crianças, adolescentes, famílias, profissionais e instituições de ensino — sempre com base em evidências científicas, ética e prática clínica.</p>
-      <div class="hero-acoes">
-        <a class="btn btn-teal" href="#agendar">Agendar atendimento</a>
-        <a class="btn btn-linha" href="#profissionais">Formações para profissionais</a>
-      </div>
-      <p class="hero-nota">Atendimentos, aulas, cursos e formações presenciais e on-line.</p>
-    </div>
-    <div class="hero-arte">
-      <figure class="hero-foto">
-        <svg viewBox="0 0 120 120" aria-hidden="true"><g fill="#17808F" opacity=".55"><circle cx="20" cy="20" r="5"/><circle cx="60" cy="12" r="4"/><circle cx="100" cy="24" r="5"/><circle cx="12" cy="60" r="4"/><circle cx="48" cy="52" r="3"/><circle cx="84" cy="58" r="3"/><circle cx="26" cy="96" r="5"/><circle cx="66" cy="92" r="4"/><circle cx="104" cy="100" r="4"/></g><circle cx="60" cy="60" r="4" fill="#E4A23C"/></svg>
-        <img src="img/erica-hero.jpg" alt="Erica Reis, psicopedagoga, em sua mesa no Espaço KricaEducar" width="800" height="1000">
-        <figcaption><strong>Erica Reis</strong>Psicopedagoga e neuropsicopedagoga</figcaption>
-      </figure>
-    </div>
+    <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+      <svg class="abrir" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="fechar" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <nav aria-label="Principal">
+      <ul class="menu" id="menu">
+        <li><a href="#atendimento">Atendimento</a></li>
+        <li><a href="#escolas">Escolas</a></li>
+        <li><a href="#profissionais">Profissionais</a></li>
+        <li><a href="#cursos">Cursos</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a class="btn btn-primario" href="https://wa.me/5511987868476?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20KricaEducar%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-chat"/></svg>Agendar pelo WhatsApp</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
-<div class="faixa">
-  <div class="wrap faixa-in">
-    <div><strong>Famílias</strong><span>avaliação, intervenção e orientação familiar</span></div>
-    <div><strong>Instituições de ensino</strong><span>consultoria, assessoria e formação de equipes</span></div>
-    <div><strong>Profissionais</strong><span>cursos, mentorias, supervisão e grupos de estudo</span></div>
+<main id="inicio">
+<section class="hero" aria-labelledby="titulo-hero">
+  <div class="wrap hero-grid">
+    <div class="hero-texto">
+      <span class="eyebrow">Espaço Psicopedagógico KricaEducar</span>
+      <h1 id="titulo-hero">Desenvolvimento, aprendizagem e <span class="destaque">ciência</span> aplicada à prática</h1>
+      <p>Atendimento especializado, formação profissional e consultoria técnica para crianças, adolescentes, famílias, profissionais e instituições de ensino — sempre com base em evidências científicas, ética e prática clínica.</p>
+      <div class="acoes">
+        <a class="btn btn-primario" href="https://wa.me/5511987868476?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20KricaEducar%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-chat"/></svg>Agendar atendimento</a>
+        <a class="btn btn-contorno" href="#profissionais">Formações para profissionais</a>
+      </div>
+      <ul class="selos" aria-label="Destaques">
+        <li>Presencial e on-line</li>
+        <li>Entrevista inicial gratuita</li>
+        <li>Base em evidências</li>
+      </ul>
+    </div>
+    <figure class="hero-foto">
+      <svg class="pontos" viewBox="0 0 120 120" aria-hidden="true"><g fill="#17808F" opacity=".5"><circle cx="20" cy="20" r="5"/><circle cx="60" cy="12" r="4"/><circle cx="100" cy="24" r="5"/><circle cx="12" cy="60" r="4"/><circle cx="48" cy="52" r="3"/><circle cx="84" cy="58" r="3"/><circle cx="26" cy="96" r="5"/><circle cx="66" cy="92" r="4"/><circle cx="104" cy="100" r="4"/></g><circle cx="60" cy="60" r="4" fill="#E4A23C"/></svg>
+      <img src="img/erica-hero.jpg" alt="Erica Reis, psicopedagoga, em sua mesa no Espaço KricaEducar" width="800" height="1000" fetchpriority="high">
+      <figcaption><strong>Erica Reis</strong>Psicopedagoga e neuropsicopedagoga</figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="publicos">
+  <div class="wrap publicos-in">
+    <a class="publico" href="#atendimento"><svg aria-hidden="true"><use href="#i-familia"/></svg><div><strong>Famílias</strong><span>Avaliação, intervenção e orientação familiar</span></div></a>
+    <a class="publico" href="#escolas"><svg aria-hidden="true"><use href="#i-escola"/></svg><div><strong>Instituições de ensino</strong><span>Consultoria, assessoria e formação de equipes</span></div></a>
+    <a class="publico" href="#profissionais"><svg aria-hidden="true"><use href="#i-profissional"/></svg><div><strong>Profissionais</strong><span>Cursos, mentorias, supervisão e grupos de estudo</span></div></a>
   </div>
 </div>
 
-<section id="atendimento">
+<section id="atendimento" aria-labelledby="titulo-atendimento">
   <div class="wrap">
-    <div class="cabeca">
+    <div class="cabeca revelar">
       <span class="eyebrow">Atendimento clínico</span>
-      <h2>Cuidado especializado para quem <span class="destaque">aprende</span></h2>
+      <h2 id="titulo-atendimento">Cuidado especializado para quem <span class="destaque">aprende</span></h2>
       <p>Acompanhamento de crianças e adolescentes com dificuldades e transtornos de aprendizagem, com a família como parte ativa do processo.</p>
     </div>
-    <div class="cards cards-2">
-      <article class="card">
-        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><g fill="#17808F"><circle cx="9" cy="9" r="4"/><circle cx="25" cy="9" r="3"/><circle cx="9" cy="25" r="3"/><circle cx="25" cy="25" r="4"/></g></svg>
+    <div class="grade grade-2">
+      <article class="card revelar">
+        <div class="icone"><svg aria-hidden="true"><use href="#i-lupa"/></svg></div>
         <h3>Avaliação Psicopedagógica e Neuropsicopedagógica</h3>
         <p>Processo individualizado e criterioso para identificar o perfil de aprendizagem, as potencialidades e as dificuldades do paciente, subsidiando um plano de intervenção baseado em evidências.</p>
-        <ul>
+        <ul class="lista">
           <li>Entrevista inicial gratuita com a família</li>
           <li>Anamnese com os pais ou responsáveis</li>
           <li>8 sessões individuais com testes e instrumentos padronizados</li>
@@ -317,11 +506,11 @@
           <li>Devolutiva final com entrega do parecer avaliativo</li>
         </ul>
       </article>
-      <article class="card">
-        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><g fill="#17808F"><circle cx="17" cy="7" r="4"/><circle cx="8" cy="20" r="3"/><circle cx="26" cy="20" r="3"/><circle cx="17" cy="28" r="3"/></g></svg>
+      <article class="card revelar">
+        <div class="icone"><svg aria-hidden="true"><use href="#i-plano"/></svg></div>
         <h3>Intervenção Psicopedagógica e Neuropsicopedagógica</h3>
         <p>Atendimento clínico individualizado voltado ao desenvolvimento das habilidades cognitivas, acadêmicas e funcionais relacionadas à aprendizagem. Iniciada após a avaliação, com um Plano Interventivo Individualizado estruturado em metas de curto, médio e longo prazo.</p>
-        <ul>
+        <ul class="lista">
           <li>Protocolos interventivos e programas baseados no modelo RTI</li>
           <li>Recursos terapêuticos e estratégias fundamentadas em evidências</li>
           <li>Monitoramento contínuo, com ajustes conforme a evolução</li>
@@ -329,8 +518,9 @@
         </ul>
       </article>
     </div>
-    <div class="intervencao">
-      <div class="duas-col" style="align-items:start">
+
+    <div class="painel revelar">
+      <div class="duas">
         <div>
           <span class="eyebrow">Como funciona a intervenção</span>
           <h3>Estratégias <span class="destaque">lúdicas</span>, cognitivas e pedagógicas</h3>
@@ -338,8 +528,8 @@
           <p class="objetivo">O objetivo é promover avanços significativos no desempenho acadêmico, na autonomia e na qualidade do processo de aprendizagem.</p>
         </div>
         <div>
-          <p class="intervencao-titulo">As sessões podem trabalhar</p>
-          <ul class="habilidades">
+          <p class="rotulo">As sessões podem trabalhar</p>
+          <ul class="chips">
             <li>Atenção e funções executivas</li>
             <li>Alfabetização e letramento</li>
             <li>Leitura, escrita e interpretação</li>
@@ -357,13 +547,15 @@
         <figure><img src="img/sala-infantil.jpg" alt="Mesa infantil com lápis de cor, tintas e cadeiras coloridas" width="900" height="675" loading="lazy"><figcaption>Cantinho de atividades para as crianças</figcaption></figure>
       </div>
     </div>
-    <div class="hero-acoes" style="margin-top:44px;align-items:center">
-      <a class="btn btn-teal" href="https://wa.me/5511987868476?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20avalia%C3%A7%C3%A3o%20psicopedag%C3%B3gica.">Falar no WhatsApp</a>
-      <span style="font-size:.85rem;color:var(--petroleo-70)">Entre em contato para informações sobre acompanhamento e horários. A entrevista inicial é gratuita e nela são apresentados valores e cronograma.</span>
+
+    <div class="faixa-cta revelar">
+      <p><strong>A entrevista inicial é gratuita.</strong>Entre em contato para informações sobre acompanhamento e horários. Valores e cronograma são apresentados na entrevista.</p>
+      <a class="btn btn-primario" href="https://wa.me/5511987868476?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20a%20avalia%C3%A7%C3%A3o%20e%20a%20interven%C3%A7%C3%A3o%20psicopedag%C3%B3gica." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-chat"/></svg>Falar no WhatsApp</a>
     </div>
-    <div class="duas-col inversa espaco">
-      <img class="foto-bloco" src="img/espaco-kricaeducar.jpg" alt="Sala de atendimento do Espaço Psicopedagógico KricaEducar, com mesa, estantes de livros e jogos" width="900" height="900" loading="lazy">
-      <div>
+
+    <div class="duas centro espaco">
+      <img class="foto revelar" src="img/espaco-kricaeducar.jpg" alt="Sala de atendimento do Espaço Psicopedagógico KricaEducar, com mesa, estantes de livros e jogos" width="900" height="900" loading="lazy">
+      <div class="revelar">
         <span class="eyebrow">O espaço</span>
         <h3>Um ambiente pensado para <span class="destaque">aprender</span></h3>
         <p>Os atendimentos acontecem em uma sala acolhedora e organizada, com livros, jogos e recursos pedagógicos à disposição de cada etapa da avaliação e da intervenção.</p>
@@ -372,88 +564,100 @@
   </div>
 </section>
 
-<section id="escolas" class="valores" style="padding:92px 0">
+<section id="escolas" class="sec-clara" aria-labelledby="titulo-escolas">
   <div class="wrap">
-    <div class="cabeca">
+    <div class="cabeca revelar">
       <span class="eyebrow">Instituições de ensino</span>
-      <h2>Sua escola com suporte <span class="destaque">técnico</span> de verdade</h2>
+      <h2 id="titulo-escolas">Sua escola com suporte <span class="destaque">técnico</span> de verdade</h2>
       <p>Consultoria e formação para equipes educacionais lidarem com a diversidade de aprendizagem em sala de aula.</p>
     </div>
-    <div class="cards">
-      <article class="card">
+    <div class="grade">
+      <article class="card revelar">
+        <div class="icone"><svg aria-hidden="true"><use href="#i-escola"/></svg></div>
         <h3>Consultoria e assessoria</h3>
         <p>Acompanhamento técnico contínuo para instituições de ensino, com orientação de condutas e fluxos de encaminhamento.</p>
       </article>
-      <article class="card">
+      <article class="card revelar">
+        <div class="icone"><svg aria-hidden="true"><use href="#i-palestra"/></svg></div>
         <h3>Palestras e treinamentos</h3>
         <p>Formações para equipes educacionais sobre aprendizagem, inclusão, transtornos e práticas baseadas em evidências.</p>
       </article>
-      <article class="card">
+      <article class="card revelar">
+        <div class="icone"><svg aria-hidden="true"><use href="#i-doc"/></svg></div>
         <h3>Materiais técnicos</h3>
         <p>Desenvolvimento de materiais técnicos e educacionais sob medida para a realidade da sua instituição.</p>
       </article>
     </div>
+    <div class="acoes revelar" style="margin-top:clamp(1.8rem,4vw,2.6rem)">
+      <a class="btn btn-primario" href="https://wa.me/5511987868476?text=Ol%C3%A1%21%20Gostaria%20de%20levar%20o%20KricaEducar%20para%20a%20minha%20escola%20%28consultoria%2C%20palestras%20ou%20treinamentos%29." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-chat"/></svg>Levar para a minha escola</a>
+    </div>
   </div>
 </section>
 
-<section id="profissionais" class="escuro">
-  <div class="wrap">
-    <div class="cabeca">
+<section id="profissionais" class="escuro" aria-labelledby="titulo-prof">
+  <div class="wrap" style="position:relative;z-index:1">
+    <div class="cabeca revelar">
       <span class="eyebrow">Para profissionais</span>
-      <h2>Da formação à <span class="destaque">excelência</span> na prática clínica</h2>
+      <h2 id="titulo-prof">Da formação à <span class="destaque">excelência</span> na prática clínica</h2>
       <p>Mentorias, supervisão e atualização científica para você atuar com segurança e se tornar referência na sua área.</p>
     </div>
-    <div class="cards">
-      <article class="card">
+    <div class="grade">
+      <article class="card revelar">
+        <div class="icone"><svg aria-hidden="true"><use href="#i-supervisao"/></svg></div>
         <h3>Mentoria e supervisão clínica</h3>
         <p>Acompanhamento próximo dos seus casos reais: hipóteses, condutas, documentos e posicionamento profissional.</p>
       </article>
-      <article class="card">
+      <article class="card revelar">
+        <div class="icone"><svg aria-hidden="true"><use href="#i-profissional"/></svg></div>
         <h3>Cursos de capacitação</h3>
         <p>Cursos de capacitação e aperfeiçoamento, presenciais e on-line, unindo teoria e aplicação prática.</p>
       </article>
-      <article class="card">
+      <article class="card revelar">
+        <div class="icone"><svg aria-hidden="true"><use href="#i-grupo"/></svg></div>
         <h3>Grupos de estudo</h3>
         <p>Grupos de estudo e atualização científica para manter sua prática alinhada às evidências mais recentes.</p>
       </article>
     </div>
-    <div class="escuro-cta">
-      <a class="btn btn-teal" href="#mentoria">Ver planos e agendar</a>
-      <span>Horários e valores disponíveis logo abaixo, com agendamento on-line.</span>
+    <div class="acoes revelar">
+      <a class="btn btn-claro" href="#mentoria">Ver planos e valores<svg aria-hidden="true"><use href="#i-seta"/></svg></a>
+      <span>Planos de mentoria e supervisão logo abaixo, com agendamento pelo WhatsApp.</span>
     </div>
   </div>
 </section>
 
-<section id="mentoria" style="padding-top:0">
+<section id="mentoria" aria-labelledby="titulo-mentoria">
   <div class="wrap">
-    <div class="cabeca">
+    <div class="cabeca revelar">
       <span class="eyebrow">Mentoria e supervisão</span>
-      <h2>Escolha seu plano e <span class="destaque">agende</span> on-line</h2>
+      <h2 id="titulo-mentoria">Escolha seu plano e <span class="destaque">agende</span></h2>
       <p>Para psicopedagogos, pedagogos, neuropsicopedagogos e demais profissionais que buscam aperfeiçoar sua atuação clínica e institucional.</p>
     </div>
-    <h3 class="grupo-titulo">Mentoria</h3>
+
+    <div class="subtitulo revelar"><h3>Mentoria</h3><span>Pacotes individuais</span></div>
     <div class="planos planos-2">
-      <article class="curso">
-        <span class="curso-tag">Mentoria</span>
-        <h3>Pacote com 4 encontros</h3>
+      <article class="plano revelar">
+        <span class="tag">Mentoria</span>
+        <h4>Pacote com 4 encontros</h4>
         <p>Desenvolvimento profissional, planejamento de casos, estruturação de atendimentos e organização clínica.</p>
-        <div class="curso-preco">R$ 750<small>pacote completo</small></div>
-        <a class="btn btn-teal" href="#agendar">Agendar</a>
+        <div class="preco">R$ 750<small>pacote completo</small></div>
+        <a class="btn btn-primario" href="https://wa.me/5511987868476?text=Ol%C3%A1%21%20Tenho%20interesse%20na%20Mentoria%20-%20pacote%20com%204%20encontros%20%28R%24%20750%29." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
       </article>
-      <article class="curso">
-        <span class="curso-tag">Mentoria</span>
-        <h3>Pacote com 12 encontros</h3>
+      <article class="plano revelar">
+        <span class="tag">Mentoria</span>
+        <h4>Pacote com 12 encontros</h4>
         <p>Acompanhamento de longo prazo para aprimoramento técnico contínuo e evolução consistente da sua prática.</p>
-        <div class="curso-preco">R$ 1.800<small>equivale a R$ 150 por encontro</small></div>
-        <a class="btn btn-teal" href="#agendar">Agendar</a>
+        <div class="preco">R$ 1.800<small>equivale a R$ 150 por encontro</small></div>
+        <a class="btn btn-primario" href="https://wa.me/5511987868476?text=Ol%C3%A1%21%20Tenho%20interesse%20na%20Mentoria%20-%20pacote%20com%2012%20encontros%20%28R%24%201.800%29." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
       </article>
     </div>
-    <div class="duas-col supervisao">
-      <div>
-        <h3 class="grupo-titulo">Supervisão Psicopedagógica e Neuropsicopedagógica</h3>
+
+    <div class="duas centro supervisao">
+      <div class="revelar">
+        <span class="eyebrow">Supervisão clínica</span>
+        <h3>Supervisão Psicopedagógica e Neuropsicopedagógica</h3>
         <p class="tagline">Sua prática clínica merece suporte, direção e segurança profissional.</p>
         <p>A Supervisão Psicopedagógica Clínica foi estruturada para profissionais que desejam aprimorar análises, fortalecer condutas interventivas e ampliar a confiança na tomada de decisões clínicas.</p>
-        <ul class="checklist">
+        <ul class="lista">
           <li>Discussão de casos reais</li>
           <li>Apoio em relatórios e planejamentos</li>
           <li>Direcionamento interventivo</li>
@@ -462,85 +666,86 @@
         </ul>
         <p>Planos individuais e em pacote, com condições especiais.</p>
       </div>
-      <img class="foto-bloco" src="img/erica-estudo.jpg" alt="Erica Reis lendo um livro sobre dislexia, com o DSM-5-TR sobre a mesa" width="800" height="1000" loading="lazy">
+      <img class="foto revelar" src="img/erica-estudo.jpg" alt="Erica Reis lendo um livro sobre dislexia, com o DSM-5-TR sobre a mesa" width="800" height="1000" loading="lazy">
     </div>
+
     <div class="planos">
-      <article class="curso">
-        <span class="curso-tag">Sessão avulsa</span>
-        <h3>1 aula</h3>
+      <article class="plano revelar">
+        <span class="tag">Sessão avulsa</span>
+        <h4>1 aula</h4>
         <p>Flexibilidade para atender suas necessidades pontuais.</p>
-        <div class="curso-preco">R$ 200<small>por encontro</small></div>
-        <a class="btn btn-teal" href="#agendar">Agendar</a>
+        <div class="preco">R$ 200<small>por encontro</small></div>
+        <a class="btn btn-primario" href="https://wa.me/5511987868476?text=Ol%C3%A1%21%20Quero%20agendar%20uma%20Supervis%C3%A3o%20-%20sess%C3%A3o%20avulsa%20%28R%24%20200%29." target="_blank" rel="noopener">Agendar</a>
       </article>
-      <article class="curso">
-        <span class="curso-tag">Pacote Essencial</span>
-        <h3>2 aulas</h3>
+      <article class="plano revelar">
+        <span class="tag">Pacote Essencial</span>
+        <h4>2 aulas</h4>
         <p>Economia de R$ 20,00. Valor por encontro: R$ 190,00.</p>
-        <div class="curso-preco"><span class="preco-de">de R$ 400,00</span>R$ 380<small>5% de desconto</small></div>
-        <a class="btn btn-teal" href="#agendar">Agendar</a>
+        <div class="preco"><span class="de">de R$ 400,00</span>R$ 380<small>5% de desconto</small></div>
+        <a class="btn btn-primario" href="https://wa.me/5511987868476?text=Ol%C3%A1%21%20Tenho%20interesse%20na%20Supervis%C3%A3o%20-%20Pacote%20Essencial%2C%202%20aulas%20%28R%24%20380%29." target="_blank" rel="noopener">Agendar</a>
       </article>
-      <article class="curso destaque-card">
-        <span class="badge">Mais escolhido</span>
-        <span class="curso-tag">Pacote Intermediário</span>
-        <h3>4 aulas</h3>
+      <article class="plano popular revelar">
+        <span class="selo-popular">Mais escolhido</span>
+        <span class="tag">Pacote Intermediário</span>
+        <h4>4 aulas</h4>
         <p>Economia de R$ 80,00. Valor por encontro: R$ 180,00.</p>
-        <div class="curso-preco"><span class="preco-de">de R$ 800,00</span>R$ 720<small>10% de desconto</small></div>
-        <a class="btn btn-teal" href="#agendar">Agendar</a>
+        <div class="preco"><span class="de">de R$ 800,00</span>R$ 720<small>10% de desconto</small></div>
+        <a class="btn btn-primario" href="https://wa.me/5511987868476?text=Ol%C3%A1%21%20Tenho%20interesse%20na%20Supervis%C3%A3o%20-%20Pacote%20Intermedi%C3%A1rio%2C%204%20aulas%20%28R%24%20720%29." target="_blank" rel="noopener">Agendar</a>
       </article>
-      <article class="curso">
-        <span class="curso-tag">Pacote Intensivo</span>
-        <h3>5 aulas</h3>
+      <article class="plano revelar">
+        <span class="tag">Pacote Intensivo</span>
+        <h4>5 aulas</h4>
         <p>Economia de R$ 150,00. Valor por encontro: R$ 170,00.</p>
-        <div class="curso-preco"><span class="preco-de">de R$ 1.000,00</span>R$ 850<small>15% de desconto</small></div>
-        <a class="btn btn-teal" href="#agendar">Agendar</a>
+        <div class="preco"><span class="de">de R$ 1.000,00</span>R$ 850<small>15% de desconto</small></div>
+        <a class="btn btn-primario" href="https://wa.me/5511987868476?text=Ol%C3%A1%21%20Tenho%20interesse%20na%20Supervis%C3%A3o%20-%20Pacote%20Intensivo%2C%205%20aulas%20%28R%24%20850%29." target="_blank" rel="noopener">Agendar</a>
       </article>
     </div>
-    <div class="planos-rodape">
-      <p class="planos-info">Validade dos pacotes: 60 dias. Cancelamento ou reagendamento com até 24h de antecedência. Formas de pagamento: PIX, transferência ou cartão de crédito.</p>
-      <a class="btn btn-teal" href="https://wa.me/5511987868476?text=Ol%C3%A1!%20Quero%20agendar%20minha%20supervis%C3%A3o.">Agende sua supervisão pelo WhatsApp</a>
+    <div class="rodape-planos revelar">
+      <p>Validade dos pacotes: 60 dias. Cancelamento ou reagendamento com até 24h de antecedência. Formas de pagamento: PIX, transferência ou cartão de crédito.</p>
+      <a class="btn btn-contorno" href="https://wa.me/5511987868476?text=Ol%C3%A1%21%20Quero%20agendar%20minha%20supervis%C3%A3o." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-chat"/></svg>Tirar dúvidas no WhatsApp</a>
     </div>
   </div>
 </section>
 
-<section id="cursos" style="padding-top:0">
+<section id="cursos" class="sec-clara" aria-labelledby="titulo-cursos">
   <div class="wrap">
-    <div class="cabeca">
+    <div class="cabeca revelar">
       <span class="eyebrow">Cursos e produtos digitais</span>
-      <h2>Materiais para elevar sua <span class="destaque">prática</span></h2>
+      <h2 id="titulo-cursos">Materiais para elevar sua <span class="destaque">prática</span></h2>
       <p>Conteúdos desenvolvidos para profissionais da área clínica e educacional, fundamentados na prática e em evidências científicas, com acesso imediato após a aquisição.</p>
     </div>
-    <article class="duas-col produto">
+    <article class="produto revelar">
       <img src="img/parecer-avaliativo.jpg" alt="Erica Reis trabalhando no computador, divulgação do material Parecer e Relatório Psicopedagógico" width="640" height="800" loading="lazy">
-      <div>
-        <span class="curso-tag">Produto digital · destaque</span>
+      <div class="texto">
+        <span class="eyebrow">Produto digital · destaque</span>
         <h3>Estrutura de Parecer <span class="destaque">Avaliativo</span></h3>
         <p>Modelo completo e profissional de relatório psicopedagógico para psicopedagogos e profissionais da educação.</p>
         <p>Um material detalhado que orienta a elaboração do parecer avaliativo, dá suporte à construção de diagnósticos precisos e de planos de intervenção eficazes, e ajuda a acompanhar o desenvolvimento e a aprendizagem de crianças e adolescentes com um atendimento personalizado.</p>
-        <div class="curso-preco">R$ 60,00<small>pagamento único, acesso imediato</small></div>
-        <div class="produto-acoes">
-          <a class="btn btn-teal" href="https://pay.kiwify.com.br/MKQfVA1" target="_blank" rel="noopener">Quero o modelo</a>
+        <div class="preco">R$ 60,00<small>pagamento único, acesso imediato</small></div>
+        <div class="acoes">
+          <a class="btn btn-primario" href="https://pay.kiwify.com.br/MKQfVA1" target="_blank" rel="noopener">Quero o modelo<svg aria-hidden="true"><use href="#i-seta"/></svg></a>
           <span>Compra segura pela Kiwify.</span>
         </div>
       </div>
     </article>
-    <div class="cursos-grid">
-      <article class="curso">
-        <span class="curso-tag">Cursos</span>
+    <div class="grade">
+      <article class="card curso-card revelar">
+        <div class="icone"><svg aria-hidden="true"><use href="#i-lupa"/></svg></div>
         <h3>Protocolos, instrumentos e testes avaliativos</h3>
         <p>Cursos de capacitação sobre a aplicação e análise de protocolos, instrumentos e testes na avaliação psicopedagógica.</p>
-        <a class="btn btn-teal" href="#">Conhecer os cursos</a>
+        <a class="btn btn-contorno" href="https://wa.me/5511987868476?text=Ol%C3%A1%21%20Quero%20conhecer%20os%20cursos%20sobre%20protocolos%2C%20instrumentos%20e%20testes%20avaliativos." target="_blank" rel="noopener">Conhecer os cursos</a>
       </article>
-      <article class="curso">
-        <span class="curso-tag">Cursos</span>
+      <article class="card curso-card revelar">
+        <div class="icone"><svg aria-hidden="true"><use href="#i-cerebro"/></svg></div>
         <h3>Estudos de casos</h3>
         <p>Aprenda com casos reais: raciocínio clínico, hipóteses, condutas e decisões, do primeiro atendimento à devolutiva.</p>
-        <a class="btn btn-teal" href="#">Conhecer os estudos</a>
+        <a class="btn btn-contorno" href="https://wa.me/5511987868476?text=Ol%C3%A1%21%20Quero%20conhecer%20os%20estudos%20de%20casos." target="_blank" rel="noopener">Conhecer os estudos</a>
       </article>
-      <article class="curso">
-        <span class="curso-tag">Produtos digitais</span>
+      <article class="card curso-card revelar">
+        <div class="icone"><svg aria-hidden="true"><use href="#i-doc"/></svg></div>
         <h3>E-books, atividades e apostilas</h3>
         <p>Atividades psicopedagógicas autorais, modelos de recursos terapêuticos e materiais de apoio para avaliação e intervenção.</p>
-        <a class="btn btn-teal" href="#">Ver materiais</a>
+        <a class="btn btn-contorno" href="https://wa.me/5511987868476?text=Ol%C3%A1%21%20Quero%20conhecer%20os%20e-books%2C%20atividades%20e%20apostilas." target="_blank" rel="noopener">Ver materiais</a>
       </article>
     </div>
   </div>
@@ -548,83 +753,131 @@
 
 <div class="valores">
   <div class="wrap valores-in">
-    <div class="valor">
-      <h3>Base em evidências</h3>
-      <p>Todos os serviços são construídos sobre evidências científicas atualizadas, unindo teoria e aplicação.</p>
+    <div class="valor revelar">
+      <div class="icone"><svg aria-hidden="true"><use href="#i-cerebro"/></svg></div>
+      <div><h3>Base em evidências</h3><p>Todos os serviços são construídos sobre evidências científicas atualizadas, unindo teoria e aplicação.</p></div>
     </div>
-    <div class="valor">
-      <h3>Ética profissional</h3>
-      <p>Atuação qualificada e responsável, alinhada às demandas atuais da educação e da saúde.</p>
+    <div class="valor revelar">
+      <div class="icone"><svg aria-hidden="true"><use href="#i-balanca"/></svg></div>
+      <div><h3>Ética profissional</h3><p>Atuação qualificada e responsável, alinhada às demandas atuais da educação e da saúde.</p></div>
     </div>
-    <div class="valor">
-      <h3>Cuidado humanizado</h3>
-      <p>Cada pessoa, família e instituição é acompanhada com escuta, respeito e soluções sob medida.</p>
+    <div class="valor revelar">
+      <div class="icone"><svg aria-hidden="true"><use href="#i-coracao"/></svg></div>
+      <div><h3>Cuidado humanizado</h3><p>Cada pessoa, família e instituição é acompanhada com escuta, respeito e soluções sob medida.</p></div>
     </div>
   </div>
 </div>
 
-<section id="agendar" style="background:var(--branco);border-top:1px solid var(--linha);border-bottom:1px solid var(--linha)">
+<section id="agendar" class="sec-branca" aria-labelledby="titulo-agenda">
   <div class="wrap">
-    <div class="cabeca">
-      <span class="eyebrow">Agendamento on-line</span>
-      <h2>Escolha o melhor <span class="destaque">horário</span> para você</h2>
-      <p>Selecione o tipo de atendimento e o horário disponível. A confirmação chega no seu e-mail e o compromisso entra direto na agenda do espaço.</p>
+    <div class="agenda revelar">
+      <div class="icone"><svg aria-hidden="true"><use href="#i-calendario"/></svg></div>
+      <div>
+        <span class="em-breve">Em desenvolvimento</span>
+        <h3 id="titulo-agenda">Agendamento on-line em breve</h3>
+        <p>Estamos preparando uma agenda on-line para você escolher o melhor horário direto pelo site. Enquanto isso, os agendamentos são feitos pelo WhatsApp, de forma rápida e personalizada.</p>
+      </div>
+      <a class="btn btn-primario" href="https://wa.me/5511987868476?text=Ol%C3%A1%21%20Gostaria%20de%20verificar%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-chat"/></svg>Agendar pelo WhatsApp</a>
     </div>
-    <!-- INÍCIO EMBED CAL.COM
-         Substitua "kricaeducar" pelo nome de usuário criado no cal.com
-         e "atendimento" pelo slug do tipo de evento configurado lá. -->
-    <div id="cal-agenda" style="width:100%;min-height:640px;overflow:auto;border-radius:var(--raio)"></div>
-    <script type="text/javascript">
-      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-      Cal("init", {origin:"https://cal.com"});
-      Cal("inline", {
-        elementOrSelector: "#cal-agenda",
-        calLink: "kricaeducar/atendimento",
-        layout: "month_view"
-      });
-      Cal("ui", {
-        styles: { branding: { brandColor: "#17808F" } },
-        hideEventTypeDetails: false,
-        layout: "month_view"
-      });
-    </script>
-    <!-- FIM EMBED CAL.COM -->
-    <p style="margin-top:20px;font-size:.85rem;color:var(--petroleo-70)">Prefere falar com uma pessoa? <a href="#contato" style="color:var(--teal-escuro);font-weight:600">Chame no WhatsApp</a> que agendamos juntos.</p>
   </div>
 </section>
 
-<section class="sobre" id="sobre">
+<section class="sobre" id="sobre" aria-labelledby="titulo-sobre">
   <div class="wrap sobre-grid">
-    <div class="sobre-foto" style="overflow:hidden"><img src="img/erica-sobre.jpg" alt="Erica Reis sorrindo em seu consultório no Espaço KricaEducar" width="800" height="1000" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-    <div>
+    <div class="sobre-foto revelar">
+      <img src="img/erica-sobre.jpg" alt="Erica Reis sorrindo em seu consultório no Espaço KricaEducar" width="800" height="1000" loading="lazy">
+    </div>
+    <div class="revelar">
       <span class="eyebrow">Quem guia o espaço</span>
-      <h2>Prazer, <span class="destaque">Erica Reis</span></h2>
+      <h2 id="titulo-sobre">Prazer, <span class="destaque">Erica Reis</span></h2>
       <p>Psicopedagoga, mentora e supervisora psicopedagógica. À frente do Espaço KricaEducar, une a prática clínica com crianças e adolescentes à formação de profissionais e ao suporte técnico a instituições de ensino.</p>
       <p>Seu compromisso é promover uma atuação qualificada, humanizada e baseada em ciência, contribuindo para o desenvolvimento das pessoas e para a excelência da prática profissional.</p>
-      <p class="sobre-assinatura">"Desenvolvimento e aprendizagem caminham juntos quando teoria e prática se encontram."</p>
+      <p class="assinatura">"Desenvolvimento e aprendizagem caminham juntos quando teoria e prática se encontram."</p>
     </div>
   </div>
 </section>
 
-<section class="cta-final escuro" id="contato">
-  <div class="wrap">
-    <span class="eyebrow" style="justify-content:center">Fale com o espaço</span>
-    <h2>Vamos cuidar da <span class="destaque">aprendizagem</span> juntos?</h2>
+<section class="cta-final escuro" id="contato" aria-labelledby="titulo-contato">
+  <div class="wrap" style="position:relative;z-index:1">
+    <span class="eyebrow">Fale com o espaço</span>
+    <h2 id="titulo-contato">Vamos cuidar da <span class="destaque">aprendizagem</span> juntos?</h2>
     <p>Agende um atendimento, leve o KricaEducar para a sua escola ou dê o próximo passo na sua carreira.</p>
-    <div class="hero-acoes" style="justify-content:center">
-      <a class="btn btn-teal" style="background:#fff;color:var(--petroleo);box-shadow:none" href="https://wa.me/5511987868476?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20KricaEducar.">Falar pelo WhatsApp</a>
-      <a class="btn" style="border:1.5px solid rgba(242,240,234,.5);color:var(--papel)" href="#cursos">Conhecer os cursos</a>
+    <div class="acoes">
+      <a class="btn btn-claro" href="https://wa.me/5511987868476?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20KricaEducar." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-chat"/></svg>Falar pelo WhatsApp</a>
+      <a class="btn btn-contorno-claro" href="#cursos">Conhecer os cursos</a>
     </div>
   </div>
 </section>
 </main>
 
-<footer>
-  <div class="wrap footer-in">
-    <span>Espaço Psicopedagógico KricaEducar · Erica Reis, Psicopedagoga</span>
-    <span>@psicopedagogaericareis</span>
+<footer class="rodape">
+  <div class="wrap">
+    <div class="rodape-grid">
+      <div>
+        <a class="logo" href="#inicio" aria-label="KricaEducar, voltar ao início">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><g fill="#6FC4CF"><circle cx="12" cy="10" r="2.4"/><circle cx="20" cy="7" r="2"/><circle cx="28" cy="10" r="2.4"/><circle cx="8" cy="18" r="2"/><circle cx="16" cy="16" r="1.6"/><circle cx="24" cy="16" r="1.6"/><circle cx="32" cy="18" r="2"/><circle cx="11" cy="26" r="2.2"/><circle cx="20" cy="24" r="1.6"/><circle cx="29" cy="26" r="2.2"/><circle cx="16" cy="32" r="1.8"/><circle cx="24" cy="32" r="1.8"/></g><circle cx="20" cy="16" r="1.4" fill="#E4A23C"/><circle cx="20" cy="24" r="1.2" fill="#E08A8A"/></svg>
+          <span class="logo-nome">KricaEducar<small>Espaço Psicopedagógico</small></span>
+        </a>
+        <p>Atendimento especializado, formação profissional e consultoria técnica, com base em evidências científicas, ética e prática clínica.</p>
+      </div>
+      <div>
+        <h4>Navegue</h4>
+        <ul>
+          <li><a href="#atendimento">Atendimento clínico</a></li>
+          <li><a href="#escolas">Instituições de ensino</a></li>
+          <li><a href="#mentoria">Mentoria e supervisão</a></li>
+          <li><a href="#cursos">Cursos e materiais</a></li>
+          <li><a href="#sobre">Sobre a Erica</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/5511987868476?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20KricaEducar." target="_blank" rel="noopener">WhatsApp: (11) 98786-8476</a></li>
+          <li><a href="https://www.instagram.com/psicopedagogaericareis/" target="_blank" rel="noopener">Instagram: @psicopedagogaericareis</a></li>
+          <li>Atendimentos presenciais e on-line</li>
+        </ul>
+      </div>
+    </div>
+    <div class="rodape-base">
+      <span>© <span id="ano">2026</span> Espaço Psicopedagógico KricaEducar · Erica Reis</span>
+      <span>kricaeducar.com.br</span>
+    </div>
   </div>
 </footer>
 
+<a class="zap" id="zap" href="https://wa.me/5511987868476?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20KricaEducar." target="_blank" rel="noopener" aria-label="Conversar pelo WhatsApp"><svg aria-hidden="true"><use href="#i-chat"/></svg><span>WhatsApp</span></a>
+
+<script>
+  (function(){
+    var d=document, raiz=d.documentElement, topo=d.getElementById('topo'), botao=d.querySelector('.menu-botao'), menu=d.getElementById('menu'), zap=d.getElementById('zap');
+    var ano=d.getElementById('ano'); if(ano) ano.textContent=new Date().getFullYear();
+
+    function fechar(){topo.classList.remove('menu-aberto');d.body.classList.remove('travado');botao.setAttribute('aria-expanded','false');botao.setAttribute('aria-label','Abrir menu');}
+    botao.addEventListener('click',function(){
+      var aberto=topo.classList.toggle('menu-aberto');
+      d.body.classList.toggle('travado',aberto);
+      botao.setAttribute('aria-expanded',aberto?'true':'false');
+      botao.setAttribute('aria-label',aberto?'Fechar menu':'Abrir menu');
+    });
+    menu.addEventListener('click',function(e){ if(e.target.closest('a')) fechar(); });
+    d.addEventListener('keydown',function(e){ if(e.key==='Escape') fechar(); });
+    window.addEventListener('resize',function(){ if(window.innerWidth>980) fechar(); });
+
+    var contato=d.getElementById('contato');
+    function aoRolar(){
+      topo.classList.toggle('rolou',window.scrollY>8);
+      var r=contato.getBoundingClientRect();
+      zap.classList.toggle('oculto', window.scrollY<300 || (r.top<window.innerHeight && r.bottom>0));
+    }
+    window.addEventListener('scroll',aoRolar,{passive:true}); aoRolar();
+
+    var itens=d.querySelectorAll('.revelar');
+    if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      var obs=new IntersectionObserver(function(ents){ents.forEach(function(en){ if(en.isIntersecting){en.target.classList.add('visivel');obs.unobserve(en.target);} });},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+      itens.forEach(function(el){obs.observe(el);});
+    } else { itens.forEach(function(el){el.classList.add('visivel');}); }
+  })();
+</script>
 </body>
 </html>
